@@ -9,7 +9,8 @@ separate files, each with their own unique task.
 
 If you want to directly use this configuration, then make sure to change
 both files under [`hardware`](./hardware/). Both of the files under there are
-hardware-specific. `configuration.nix` under that directory is for NVIDIA,
-and `scan.nix` is what was generated from the hardware scan when installing.
+hardware-specific. `configuration.nix` under that directory is for NVIDIA and
+ALSA, and `scan.nix` is what was generated from the hardware scan when
+installing.
 
 You may also change [`system/users.nix`](./system/users.nix), if you prefer.
