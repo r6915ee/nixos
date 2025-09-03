@@ -18,6 +18,7 @@ in
     alacritty
     git
     tlrc
+    alsa-oss
     openssl
     spotify
     libsignon-glib
