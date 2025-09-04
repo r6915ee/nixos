@@ -44,8 +44,6 @@ in
     ffmpeg
     lazygit
     zellij
-    libgcc
-    gcc
     eza
     starship
     audacity
