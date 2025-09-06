@@ -17,7 +17,7 @@ in
     # Generic packages
     alacritty
     git
-    nginx
+    http-server
     tlrc
     alsa-oss
     openssl
