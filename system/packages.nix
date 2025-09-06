@@ -23,6 +23,7 @@ in
     spotify
     libsignon-glib
     speechd
+    nix-index
     vim
     efibootmgr
     OVMF
