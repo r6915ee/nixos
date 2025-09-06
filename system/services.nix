@@ -8,6 +8,9 @@
   # Enable Flatpaks.
   services.flatpak.enable = true;
 
+  # Enable NGINX.
+  services.nginx.enable = true;
+  
   # Enable FWUPD.
   services.fwupd.enable = true;
   
