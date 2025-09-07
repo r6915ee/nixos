@@ -24,6 +24,7 @@ in
     spotify
     libsignon-glib
     speechd
+    gitui
     nix-index
     vim
     efibootmgr
