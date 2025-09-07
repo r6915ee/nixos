@@ -41,6 +41,7 @@ in
     vulkan-validation-layers
     vulkan-tools
     vlc
+    nss
     bat
     helix
     ffmpeg
