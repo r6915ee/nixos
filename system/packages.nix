@@ -27,6 +27,7 @@ in
     gitui
     nix-index
     vim
+    zenity
     efibootmgr
     OVMF
     qemu
