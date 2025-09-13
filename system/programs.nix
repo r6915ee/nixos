@@ -11,6 +11,7 @@
   # Install fish.
   programs.fish.enable = true;
 
+  # Enable KDE Connect.
   programs.kdeconnect.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
