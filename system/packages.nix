@@ -24,6 +24,7 @@ in
     spotify
     libsignon-glib
     speechd
+    nix-search-tv
     gitui
     nix-index
     vim
