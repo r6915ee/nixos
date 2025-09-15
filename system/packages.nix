@@ -28,6 +28,7 @@ in
     gitui
     nix-index
     vim
+    btop
     zenity
     efibootmgr
     OVMF
