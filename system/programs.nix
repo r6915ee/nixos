@@ -14,6 +14,9 @@
   # Enable KDE Connect.
   programs.kdeconnect.enable = true;
 
+  # Enable HTOP.
+  programs.htop.enable = true;
+
   # Enable nh.
   programs.nh = {
     enable = true;
