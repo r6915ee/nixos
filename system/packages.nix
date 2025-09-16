@@ -20,6 +20,7 @@ in
     http-server
     tlrc
     alsa-oss
+    nixfmt
     openssl
     spotify
     libsignon-glib
