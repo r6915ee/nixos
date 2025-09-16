@@ -29,6 +29,8 @@ in
     gitui
     nix-index
     vim
+    asciinema
+    asciinema-agg
     btop
     zenity
     efibootmgr
