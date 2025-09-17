@@ -16,6 +16,7 @@ in
   environment.systemPackages = with pkgs; [
     # Generic packages
     alacritty
+    ghostty
     git
     http-server
     tlrc
