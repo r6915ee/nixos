@@ -23,6 +23,7 @@ in
     alsa-oss
     nixfmt
     openssl
+    yazi
     spotify
     libsignon-glib
     speechd
