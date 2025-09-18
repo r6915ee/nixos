@@ -41,6 +41,7 @@ in
     quickemu
     vscode
     pciutils
+    rusty-man
     ripgrep
     itch
     inxi
