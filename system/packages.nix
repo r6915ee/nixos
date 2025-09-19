@@ -15,6 +15,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
+    sgdboop
     alacritty
     ghostty
     git
