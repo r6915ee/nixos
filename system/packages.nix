@@ -32,6 +32,7 @@ in
     nix-search-tv
     gitui
     nix-index
+    qt6Packages.qtstyleplugin-kvantum
     vim
     asciinema
     asciinema-agg
