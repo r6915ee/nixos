@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 {
   # Install Steam.
   programs.steam = {
@@ -10,6 +10,12 @@
 
   # Install fish.
   programs.fish.enable = true;
+
+  # Install Git.
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull;
+  };
 
   # Enable KDE Connect.
   programs.kdeconnect.enable = true;

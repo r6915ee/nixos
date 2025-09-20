@@ -18,7 +18,6 @@ in
     sgdboop
     alacritty
     ghostty
-    git
     http-server
     tlrc
     alsa-oss
