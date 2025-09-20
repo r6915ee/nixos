@@ -25,6 +25,7 @@ in
     nixfmt
     openssl
     yazi
+    rar
     spotify
     libsignon-glib
     speechd
