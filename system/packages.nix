@@ -80,7 +80,7 @@ in
     wineWowPackages.stable
     winetricks
     wineWowPackages.waylandFull
-    zed-editor-fhs
+    zed-editor
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
