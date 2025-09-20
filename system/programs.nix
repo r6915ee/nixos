@@ -16,7 +16,7 @@
     enable = true;
     package = pkgs.gitFull;
     config = {
-      credential.credentialStore = "cache";
+      credential.credentialStore = "secretservice";
     };
   };
 
