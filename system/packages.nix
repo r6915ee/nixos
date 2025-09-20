@@ -46,6 +46,7 @@ in
     pciutils
     rusty-man
     ripgrep
+    papirus-icon-theme
     itch
     inxi
     wget
