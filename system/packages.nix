@@ -18,6 +18,7 @@ in
     sgdboop
     alacritty
     ghostty
+    git-credential-manager
     http-server
     tlrc
     alsa-oss

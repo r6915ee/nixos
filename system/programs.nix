@@ -15,6 +15,9 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
+    config = {
+      credential.credentialStore = "cache";
+    };
   };
 
   # Enable KDE Connect.
