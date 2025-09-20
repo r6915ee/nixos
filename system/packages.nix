@@ -41,6 +41,7 @@ in
     OVMF
     qemu
     quickemu
+    codeberg-cli
     vscode
     pciutils
     rusty-man
