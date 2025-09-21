@@ -34,6 +34,7 @@ in
     nix-index
     qt6Packages.qtstyleplugin-kvantum
     vim
+    chawan
     asciinema
     asciinema-agg
     btop
