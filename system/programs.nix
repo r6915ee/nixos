@@ -17,7 +17,7 @@
     package = pkgs.gitFull;
     config = {
       credential = {
-        credentialStore = "secretservice";
+        helper = "store";
       };
     };
   };
