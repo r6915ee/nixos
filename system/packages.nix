@@ -60,6 +60,7 @@ in
     bat
     helix
     ffmpeg
+    lldb
     lazygit
     zellij
     eza
