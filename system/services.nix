@@ -25,8 +25,15 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
+  # Manage desktop environments.
+  services.desktopManager = {
+    # Install the base Plasma 6 desktop.
+    plasma6.enable = true;
+    # Install the base COSMIC desktop.
+    cosmic.enable = true;
+  };
+  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
