@@ -2,6 +2,11 @@
 
 let
   nixgl = import <nixgl> {};
+  cosmic-ctl = pkgs.callPackage "${pkgs.fetchgit {
+    url = "https://github.com/cosmic-utils/cosmic-ctl.git";
+    rev = "v1.5.0";
+    hash = "sha256-URqNhkC1XrXYxr14K6sT3TLso38eWLMA+WplBdj52Vg=";
+  }}/nix/package.nix" {};
 in
 {
   imports = [
@@ -51,6 +56,7 @@ in
     itch
     inxi
     wget
+    cosmic-ctl
     libresprite
     vulkan-loader
     vulkan-validation-layers
