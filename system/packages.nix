@@ -24,7 +24,6 @@ in
     nixfmt
     wl-clipboard-rs
     openssl
-    keychain
     yazi
     rar
     spotify
