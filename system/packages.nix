@@ -22,6 +22,7 @@ in
     tlrc
     alsa-oss
     nixfmt
+    seahorse
     wl-clipboard-rs
     openssl
     yazi
