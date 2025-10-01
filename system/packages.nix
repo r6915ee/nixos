@@ -22,6 +22,7 @@ in
     tlrc
     alsa-oss
     nixfmt
+    wl-clipboard-rs
     openssl
     keychain
     yazi
