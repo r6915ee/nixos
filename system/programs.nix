@@ -17,7 +17,7 @@
     package = pkgs.gitFull;
     config = {
       credential = {
-        helper = "store";
+        helper = "libsecret";
       };
     };
   };
