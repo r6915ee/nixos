@@ -34,6 +34,11 @@
     clean.enable = true;
   };
 
+  # Configure BASH, the global shell.
+  programs.bash.shellInit = ''
+    if command -v keychain > /dev/null 2>&1; then eval $(keychain --eval --nogui ~/.ssh/id_ed25519 --quiet); fi
+  '';
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

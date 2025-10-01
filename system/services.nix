@@ -13,6 +13,9 @@
     };
   };
 
+  # Forcefully enable GNOME Keyring.
+  services.gnome.gnome-keyring.enable = true;
+
   # Enable Flatpaks.
   services.flatpak.enable = true;
 

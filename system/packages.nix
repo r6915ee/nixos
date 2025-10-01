@@ -23,6 +23,7 @@ in
     alsa-oss
     nixfmt
     openssl
+    keychain
     yazi
     rar
     spotify
