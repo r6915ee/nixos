@@ -19,6 +19,7 @@ in
     alacritty
     ghostty
     krita
+    rare
     http-server
     polkit
     soteria
