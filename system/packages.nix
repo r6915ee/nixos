@@ -28,6 +28,7 @@ in
     yazi
     rar
     spotify
+    gnome-software
     libsignon-glib
     speechd
     nix-search-tv
