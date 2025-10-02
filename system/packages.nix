@@ -20,6 +20,8 @@ in
     ghostty
     krita
     http-server
+    polkit
+    soteria
     tlrc
     alsa-oss
     yewtube
