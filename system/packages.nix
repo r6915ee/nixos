@@ -18,6 +18,7 @@ in
     sgdboop
     alacritty
     ghostty
+    krita
     http-server
     tlrc
     alsa-oss
