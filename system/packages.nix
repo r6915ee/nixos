@@ -22,6 +22,7 @@ in
     http-server
     tlrc
     alsa-oss
+    yewtube
     nixfmt
     seahorse
     wl-clipboard-rs
