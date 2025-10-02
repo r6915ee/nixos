@@ -22,6 +22,7 @@ in
     http-server
     polkit
     soteria
+    psmisc
     tlrc
     alsa-oss
     yewtube
