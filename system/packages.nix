@@ -20,7 +20,7 @@ in
     ghostty
     krita
     rare
-    dorion
+    legcord
     http-server
     polkit
     soteria
