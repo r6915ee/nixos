@@ -20,6 +20,7 @@ in
     ghostty
     krita
     rare
+    dorion
     http-server
     polkit
     soteria
