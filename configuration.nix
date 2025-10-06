@@ -17,6 +17,8 @@
       ./hardware/configuration.nix
       # Manage users.
       ./system/users.nix
+      # Manage security.
+      ./system/security.nix
       # Manage fonts.
       ./system/fonts.nix
       # Manage system packages.
