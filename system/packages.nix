@@ -15,6 +15,9 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
+    libreoffice-qt6-fresh
+    hunspell
+    hunspellDicts.en_US
     sgdboop
     alacritty
     ghostty
