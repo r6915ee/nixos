@@ -29,8 +29,10 @@
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = true;
 
-  # Enable COSMIC Greeter, using greetd.
-  services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.gdm = {
+    enable = true;
+    banner = "STEP\nRIGHT\nUP\n";
+  };
 
   # Manage desktop environments.
   services.desktopManager = {
