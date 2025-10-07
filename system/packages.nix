@@ -15,6 +15,8 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
+    imagemagick
+    file
     libreoffice-qt6-fresh
     hunspell
     hunspellDicts.en_US
