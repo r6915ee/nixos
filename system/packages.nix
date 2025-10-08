@@ -67,7 +67,7 @@ in
     inxi
     wget
     cosmic-ext-ctl
-    libresprite
+    # libresprite
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
@@ -108,15 +108,15 @@ in
       '')
 
     # Lutris
-    (lutris.override {
-      extraLibraries = pkgs: [
-        libvorbis
-        nspr
-        xorg.libXdamage
-      ];
-      extraPkgs = pkgs: [
-        vlc
-      ];
-    })
+    # (lutris.override {
+      # extraLibraries = pkgs: [
+        # libvorbis
+        # nspr
+        # xorg.libXdamage
+      # ];
+      # extraPkgs = pkgs: [
+        # vlc
+      # ];
+    # })
   ];
 }
