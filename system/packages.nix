@@ -67,7 +67,7 @@ in
     inxi
     wget
     cosmic-ext-ctl
-    libresprite
+    # libresprite
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
