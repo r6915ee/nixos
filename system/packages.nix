@@ -108,15 +108,15 @@ in
       '')
 
     # Lutris
-    (lutris.override {
-      extraLibraries = pkgs: [
-        libvorbis
-        nspr
-        xorg.libXdamage
-      ];
-      extraPkgs = pkgs: [
-        vlc
-      ];
-    })
+    # (lutris.override {
+      # extraLibraries = pkgs: [
+        # libvorbis
+        # nspr
+        # xorg.libXdamage
+      # ];
+      # extraPkgs = pkgs: [
+        # vlc
+      # ];
+    # })
   ];
 }
