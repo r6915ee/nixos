@@ -25,6 +25,9 @@
   # Enable KDE Connect.
   programs.kdeconnect.enable = true;
 
+  # Enable Miracle.
+  programs.wayland.miracle-wm.enable = true;
+
   # Enable HTOP.
   programs.htop.enable = true;
 

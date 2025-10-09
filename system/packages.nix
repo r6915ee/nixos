@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 let
   nixgl = import <nixgl> {};
 in
@@ -15,7 +14,14 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
+    grim
+    slurp
+    mako
     imagemagick
+    waybar
+    swaybg
+    waytrogen
+    fuzzel
     file
     libreoffice-qt6-fresh
     hunspell

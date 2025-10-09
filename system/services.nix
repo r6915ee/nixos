@@ -1,4 +1,4 @@
-{...}:
+{ pkgs, ... }:
 {
   # List services that you want to enable:
 
@@ -29,9 +29,37 @@
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = true;
 
-  services.displayManager.gdm = {
-    enable = true;
-    banner = "STEP\nRIGHT\nUP\n";
+  services.displayManager = {
+    sessionPackages = [
+      (pkgs.miracle-wm.overrideAttrs (old: {
+        postInstall =
+          let
+            gbm-kms = ''
+              [Desktop Entry]
+              Name=Miracle (GBM-KMS)
+              Comment=Miracle, using the GBM-KMS backend
+              Exec=miracle-wm-session --platform-display-libs=mir:gbm-kms
+              Type=Application
+            '';
+            atomic-kms = ''
+              [Desktop Entry]
+              Name=Miracle (Atomic-KMS)
+              Comment=Miracle, using the Atomic-KMS backend
+              Exec=miracle-wm-session --platform-display-libs=mir:atomic-kms
+              Type=Application
+            '';
+          in
+          ''
+            echo "${gbm-kms}" > $out/share/wayland-sessions/miracle-gbm-kms.desktop
+            echo "${atomic-kms}" > $out/share/wayland-sessions/miracle-atomic-kms.desktop
+          '';
+        passthru.providedSessions = [ "miracle-gbm-kms" ];
+      }))
+    ];
+    gdm = {
+      enable = true;
+      banner = "STEP RIGHT UP";
+    };
   };
 
   # Manage desktop environments.
