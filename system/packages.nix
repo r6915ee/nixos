@@ -27,6 +27,7 @@ in
     hunspell
     hunspellDicts.en_US
     sgdboop
+    techmino
     alacritty
     ghostty
     krita
