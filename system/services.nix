@@ -56,10 +56,7 @@
         passthru.providedSessions = [ "miracle-gbm-kms" ];
       }))
     ];
-    gdm = {
-      enable = true;
-      banner = "STEP RIGHT UP";
-    };
+    gdm.enable = true;
   };
 
   # Manage desktop environments.
