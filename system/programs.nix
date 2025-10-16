@@ -8,6 +8,8 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  programs.ssh.startAgent = true;
+
   # Install fish.
   programs.fish.enable = true;
 
