@@ -16,7 +16,7 @@
   # Enable various passkey utilities from GNOME.
   services.gnome = {
     gnome-keyring.enable = true;
-    gcr-ssh-agent.enable = true;
+    gcr-ssh-agent.enable = false;
   };
 
   # Enable Flatpaks.
