@@ -71,6 +71,7 @@ in
     # libresprite
     vulkan-loader
     vulkan-validation-layers
+    package-version-server
     vulkan-tools
     vlc
     nss
