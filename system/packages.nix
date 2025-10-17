@@ -22,6 +22,7 @@ in
     swaybg
     waytrogen
     fuzzel
+    scite
     file
     libreoffice-qt6-fresh
     hunspell
