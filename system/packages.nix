@@ -16,7 +16,7 @@ in
     # Generic packages
     grim
     slurp
-    mako
+    # mako
     imagemagick
     waybar
     swaybg
