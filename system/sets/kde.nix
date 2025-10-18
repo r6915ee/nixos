@@ -8,6 +8,9 @@
     kaccounts-integration
     kaccounts-providers
 
+    # Dolphin plugins
+    dolphin-plugins
+
     # Programs
     kate
     akregator
