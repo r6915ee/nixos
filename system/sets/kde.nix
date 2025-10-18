@@ -10,6 +10,7 @@
 
     # Programs
     kate
+    akregator
 
     # KIO slaves
     kio-gdrive
