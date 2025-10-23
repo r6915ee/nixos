@@ -26,7 +26,6 @@ in
     file
     libreoffice-qt6-fresh
     hunspell
-    crystal-dock
     hunspellDicts.en_US
     sgdboop
     techmino
