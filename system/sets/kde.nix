@@ -14,6 +14,7 @@
     # Programs
     kate
     akregator
+    kclock
 
     # KIO slaves
     kio-gdrive
