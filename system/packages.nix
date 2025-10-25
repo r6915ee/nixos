@@ -30,6 +30,7 @@ in
     sgdboop
     techmino
     alacritty
+    plasma-panel-colorizer
     ghostty
     krita
     rare
