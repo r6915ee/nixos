@@ -22,6 +22,12 @@
   # Enable Flatpaks.
   services.flatpak.enable = true;
 
+  # Configure XDG Portals.
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
+
   # Enable FWUPD.
   services.fwupd.enable = true;
   
