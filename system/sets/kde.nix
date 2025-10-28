@@ -15,6 +15,7 @@
     kate
     akregator
     kclock
+    kdialog
 
     # KIO slaves
     kio-gdrive
