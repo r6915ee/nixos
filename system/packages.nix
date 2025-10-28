@@ -24,6 +24,7 @@ in
     fuzzel
     scite
     file
+    virtualgl
     libreoffice-qt6-fresh
     hunspell
     hunspellDicts.en_US
