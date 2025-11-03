@@ -24,6 +24,12 @@
     };
   };
 
+  # Enable AppImages.
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Enable KDE Connect.
   programs.kdeconnect.enable = true;
 
