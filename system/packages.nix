@@ -30,6 +30,8 @@ in
     hunspellDicts.en_US
     sgdboop
     techmino
+    # Needed for gtk-launch
+    gtk4.dev
     alacritty
     plasma-panel-colorizer
     ghostty
