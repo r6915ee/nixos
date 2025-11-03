@@ -31,7 +31,7 @@ in
     sgdboop
     techmino
     # Needed for gtk-launch
-    gtk4.dev
+    gtk3
     alacritty
     plasma-panel-colorizer
     ghostty
