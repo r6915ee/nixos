@@ -23,6 +23,7 @@ in
     waytrogen
     fuzzel
     scite
+    icu
     file
     virtualgl
     libreoffice-qt6-fresh
