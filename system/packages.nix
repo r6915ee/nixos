@@ -31,6 +31,7 @@ in
     hunspellDicts.en_US
     sgdboop
     techmino
+    osu-lazer-bin
     # Needed for gtk-launch
     gtk3
     alacritty
