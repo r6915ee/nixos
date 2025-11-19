@@ -22,6 +22,7 @@ in
     swaybg
     waytrogen
     fuzzel
+    neovim
     scite
     icu
     file
