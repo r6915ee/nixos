@@ -14,6 +14,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
+    quickshell
     grim
     slurp
     # mako
