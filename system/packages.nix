@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  nixgl = import <nixgl> {};
+  nixgl = import <nixgl> { };
 in
 {
   imports = [
@@ -9,7 +9,7 @@ in
   ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -118,10 +118,10 @@ in
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
-        qemu-system-x86_64 \
-          -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
-          "$@"
-      '')
+      qemu-system-x86_64 \
+        -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
+        "$@"
+    '')
 
     # Lutris
     (lutris.override {
