@@ -25,6 +25,7 @@ in
     fuzzel
     neovim
     scite
+    mpv
     icu
     file
     virtualgl
