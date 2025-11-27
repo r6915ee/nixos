@@ -36,6 +36,7 @@ Some notable programs include:
 * Lutris
 * Steam
 * Zed
+* Niri
 
 ## License
 
