@@ -32,6 +32,7 @@ in
     swaybg
     waytrogen
     fuzzel
+    xwayland-run
     neovim
     scite
     mpv
