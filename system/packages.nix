@@ -91,6 +91,7 @@ in
     itch
     inxi
     wget
+    xwayland-satellite
     cosmic-ext-ctl
     # libresprite
     vulkan-loader
