@@ -24,6 +24,7 @@ in
     wlsunset
     xdg-desktop-portal
     grim
+    vscodium-fhs
     slurp
     # mako
     imagemagick
@@ -83,7 +84,6 @@ in
     qemu
     quickemu
     codeberg-cli
-    vscode
     pciutils
     rusty-man
     ripgrep
