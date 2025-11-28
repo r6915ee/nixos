@@ -15,6 +15,14 @@ in
   environment.systemPackages = with pkgs; [
     # Generic packages
     quickshell
+    gpu-screen-recorder
+    brightnessctl
+    ddcutil
+    cliphist
+    matugen
+    cava
+    wlsunset
+    xdg-desktop-portal
     grim
     slurp
     # mako
