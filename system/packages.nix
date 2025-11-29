@@ -31,6 +31,7 @@ in
     brightnessctl
     ddcutil
     cliphist
+    cabextract
     matugen
     nautilus
     cava
