@@ -32,6 +32,7 @@ in
     ddcutil
     cliphist
     matugen
+    nautilus
     cava
     wlsunset
     xdg-desktop-portal
