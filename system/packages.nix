@@ -28,6 +28,7 @@ in
     quickshell
     noctalia-shell
     gpu-screen-recorder
+    kdePackages.qtmultimedia
     brightnessctl
     ddcutil
     cliphist

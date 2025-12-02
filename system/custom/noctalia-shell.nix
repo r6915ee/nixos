@@ -1,11 +1,11 @@
 { pkgs }:
 pkgs.stdenv.mkDerivation rec {
   pname = "noctalia-shell";
-  version = "3.4.0";
+  version = "3.5.0";
   src = pkgs.fetchgit {
     url = "https://github.com/noctalia-dev/noctalia-shell.git";
     tag = "v${version}";
-    hash = "sha256-eTkt9C9nck0d8o2tNePO9eU/jG3o5FC5lMYS7NT6IPg=";
+    hash = "sha256-h94W20ZYS2HF1tSV7ZfZQf4Tsj9/0wofkBiRlepG/io=";
   };
   dontConfigure = true;
   dontBuild = true;
