@@ -37,6 +37,7 @@ in
     nautilus
     cava
     wlsunset
+    obsidian
     xdg-desktop-portal
     grim
     vscodium-fhs
