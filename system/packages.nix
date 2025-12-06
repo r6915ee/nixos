@@ -36,6 +36,7 @@ in
     matugen
     nautilus
     cava
+    keepassxc
     wlsunset
     obsidian
     xdg-desktop-portal
