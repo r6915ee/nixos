@@ -13,9 +13,59 @@
     packages = [ ];
   };
   home-manager = {
+    backupFileExtension = "backup";
     users.kolya =
       { ... }:
       {
+        programs = {
+          bash.enable = false;
+          fish = {
+            enable = true;
+            shellAliases = {
+              "ls" = "eza";
+              "cls" = "clear";
+            };
+            shellAbbrs = {
+              "nix-shell" = "nix-shell --run fish";
+            };
+            shellInit = ''
+              starship init fish | source
+            '';
+          };
+          helix = {
+            enable = true;
+            defaultEditor = true;
+          };
+          starship = {
+            enable = true;
+            enableFishIntegration = true;
+          };
+          ghostty = {
+            enable = true;
+            enableFishIntegration = true;
+            settings = {
+              command = "fish";
+              theme = "Gruvbox Dark";
+              font-family = "SpaceMono Nerd Font";
+            };
+          };
+          keepassxc = {
+            enable = true;
+            autostart = true;
+          };
+          eza.enable = true;
+        };
+        services = {
+          ssh-agent = {
+            enable = true;
+          };
+        };
+        xdg = {
+          configFile = {
+            "ghostty/config".force = true;
+          };
+          autostart.enable = true;
+        };
         home.stateVersion = "25.05";
       };
   };

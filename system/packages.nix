@@ -36,22 +36,13 @@ in
     matugen
     nautilus
     cava
-    keepassxc
     wlsunset
     obsidian
     xdg-desktop-portal
-    grim
     vscodium-fhs
-    slurp
-    # mako
     imagemagick
-    waybar
-    swaybg
-    waytrogen
     fuzzel
-    xwayland-run
     neovim
-    scite
     mpv
     icu
     file
@@ -64,9 +55,7 @@ in
     osu-lazer-bin
     # Needed for gtk-launch
     gtk3
-    alacritty
     plasma-panel-colorizer
-    ghostty
     krita
     rare
     legcord
@@ -75,10 +64,8 @@ in
     soteria
     psmisc
     tlrc
-    alsa-oss
     yewtube
     nixfmt
-    seahorse
     wl-clipboard-rs
     openssl
     yazi
@@ -124,8 +111,6 @@ in
     lldb
     lazygit
     zellij
-    eza
-    starship
     audacity
     gh
     nil
