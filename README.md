@@ -20,23 +20,27 @@ The configuration directly expects the unstable channel to be used. In
 addition, [nixGL](https://github.com/nix-community/nixGL) is expected to be
 installed through its channel form as well.
 
-The configuration does not use any special programs besides nixGL, as stated
-above. This includes Flakes, Home Manager, and more. All of it is pure NixOS.
+The one additional piece of Nix software at play is [Home
+Manager](https://github.com/nix-community/home-manager); specifically, Home
+Manager is expected to be used as a NixOS module. Install it as a Nix channel
+and you should be all good.
 
 ### Programs
 
 Some notable programs include:
 
-* KDE Plasma
-* COSMIC
-* Miracle (incomplete support due to NVIDIA issues)
-* Flatpak
-* uutils (replacement for GNU utils, e.g. coreutils)
-* Legcord (Discord client)
-* Lutris
-* Steam
-* Zed
-* Niri
+- Fish
+- Starship
+- Ghostty
+- KDE Plasma
+- COSMIC
+- Flatpak
+- uutils (replacement for GNU utils, e.g. coreutils)
+- Legcord (Discord client)
+- Lutris
+- Steam
+- Zed
+- Niri
 
 ## License
 
