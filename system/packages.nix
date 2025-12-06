@@ -41,7 +41,6 @@ in
     xdg-desktop-portal
     vscodium-fhs
     imagemagick
-    fuzzel
     neovim
     mpv
     icu
@@ -109,18 +108,15 @@ in
     helix
     ffmpeg
     lldb
-    lazygit
     zellij
     audacity
     gh
     nil
     nixd
-    marksman
     gparted
     libsForQt5.qoauth
     libsForQt5.signond
     liboauth
-    mdl
     fastfetch
     nixgl.auto.nixGLNvidia
     nixgl.auto.nixVulkanNvidia
@@ -128,7 +124,6 @@ in
     winetricks
     wineWowPackages.waylandFull
     zed-editor
-    glow
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
