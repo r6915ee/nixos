@@ -34,6 +34,18 @@
               starship init fish | source
             '';
           };
+          git = {
+            enable = true;
+            package = pkgs.gitFull;
+            settings = {
+              credential = {
+                helper = "libsecret";
+              };
+            };
+          };
+          gh = {
+            enable = true;
+          };
           helix = {
             enable = true;
             defaultEditor = true;
@@ -55,12 +67,22 @@
             enable = true;
             autostart = true;
           };
+          nh = {
+            enable = true;
+            clean.enable = true;
+          };
+          btop = {
+            enable = true;
+          };
+          gh-dash.enable = true;
+          gitui.enable = true;
           eza.enable = true;
         };
         services = {
           ssh-agent = {
             enable = true;
           };
+          kdeconnect.enable = true;
         };
         xdg = {
           configFile = {

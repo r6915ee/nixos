@@ -16,7 +16,7 @@
     ./hardware/scan.nix
     # Set up the hardware attribute.
     ./hardware/configuration.nix
-    # Manage users.
+    # Manage users. Will also configure Home Manager.
     ./system/users.nix
     # Manage security.
     ./system/security.nix

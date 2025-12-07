@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs = {
     # Install Steam.
@@ -9,19 +9,8 @@
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
 
-    # Install fish.
+    # Install fish. Necessary for setting user shell.
     fish.enable = true;
-
-    # Install Git.
-    git = {
-      enable = true;
-      package = pkgs.gitFull;
-      config = {
-        credential = {
-          helper = "libsecret";
-        };
-      };
-    };
 
     # Enable AppImages.
     appimage = {
@@ -29,20 +18,8 @@
       binfmt = true;
     };
 
-    # Enable KDE Connect.
-    kdeconnect.enable = true;
-
     # Enable Niri.
     niri.enable = true;
-
-    # Enable HTOP.
-    htop.enable = true;
-
-    # Enable nh.
-    nh = {
-      enable = true;
-      clean.enable = true;
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

@@ -74,11 +74,7 @@ in
     gnome-software
     libsignon-glib
     speechd
-    nix-search-tv
-    gitui
-    nix-index
     qt6Packages.qtstyleplugin-kvantum
-    vim
     chawan
     asciinema
     asciinema-agg
@@ -95,7 +91,6 @@ in
     papirus-icon-theme
     itch
     inxi
-    wget
     xwayland-satellite
     cosmic-ext-ctl
     # libresprite
@@ -106,12 +101,10 @@ in
     vlc
     nss
     bat
-    helix
     ffmpeg
     lldb
     zellij
     audacity
-    gh
     nil
     nixd
     gparted
