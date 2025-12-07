@@ -43,6 +43,7 @@ in
     imagemagick
     neovim
     mpv
+    tinty
     icu
     file
     virtualgl
