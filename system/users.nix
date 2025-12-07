@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-  imports = [ <home-manager/nixos> ];
+  imports = [
+    <home-manager/nixos>
+  ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kolya = {
     isNormalUser = true;
@@ -45,7 +47,7 @@
             enableFishIntegration = true;
             settings = {
               command = "fish";
-              theme = "Gruvbox Dark";
+              theme = "Ayu";
               font-family = "SpaceMono Nerd Font";
             };
           };
