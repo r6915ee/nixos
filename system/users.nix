@@ -38,6 +38,10 @@
             enable = true;
             package = pkgs.gitFull;
             settings = {
+              user = {
+                name = "r6915ee";
+                email = "astergthefourth@gmail.com";
+              };
               credential = {
                 helper = "libsecret";
               };
