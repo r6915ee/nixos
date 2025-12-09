@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  nixgl = import <nixgl> { };
-in
 {
   imports = [
     # KDE package set
@@ -112,8 +109,6 @@ in
     libsForQt5.signond
     liboauth
     fastfetch
-    nixgl.auto.nixGLNvidia
-    nixgl.auto.nixVulkanNvidia
     wineWowPackages.stable
     winetricks
     wineWowPackages.waylandFull

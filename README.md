@@ -16,9 +16,7 @@ scan when installing using the graphical NixOS installer.
 You may also change [`system/users.nix`](./system/users.nix), as that details
 user information declaratively.
 
-The configuration directly expects the unstable channel to be used. In
-addition, [nixGL](https://github.com/nix-community/nixGL) is expected to be
-installed through its channel form as well.
+The configuration directly expects the unstable channel to be used.
 
 The one additional piece of Nix software at play is [Home
 Manager](https://github.com/nix-community/home-manager); specifically, Home
