@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation rec {
   dontConfigure = true;
   dontBuild = true;
   installPhase = ''
-    mkdir -p $out/etc/xdg/quickshell/noctalia-shell
-    cp -r $src/* $out/etc/xdg/quickshell/noctalia-shell
+    mkdir -p $out/bin
+    cp -r $src/* $out/bin/
   '';
 }

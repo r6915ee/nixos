@@ -7,23 +7,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      noctalia-shell = pkgs.callPackage ./custom/noctalia-shell.nix { };
-    })
-  ];
-
-  environment.etc = {
-    "xdg/quickshell/noctalia-shell".source =
-      "${pkgs.noctalia-shell.out}/etc/xdg/quickshell/noctalia-shell";
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Generic packages
     quickshell
-    noctalia-shell
     gpu-screen-recorder
     kdePackages.qtmultimedia
     brightnessctl

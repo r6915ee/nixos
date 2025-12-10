@@ -18,7 +18,13 @@
     backupFileExtension = "backup";
     users.kolya =
       { ... }:
+      let
+        noctalia-shell = pkgs.callPackage ./custom/noctalia-shell.nix { };
+      in
       {
+        home.packages = [
+          noctalia-shell
+        ];
         programs = {
           bash.enable = false;
           fish = {
@@ -94,6 +100,7 @@
         xdg = {
           configFile = {
             "ghostty/config".force = true;
+            "quickshell/noctalia-shell".source = "${noctalia-shell.out}/bin/";
           };
           autostart.enable = true;
         };
