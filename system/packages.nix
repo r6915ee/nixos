@@ -32,6 +32,7 @@
     cabextract
     matugen
     nautilus
+    wget
     cava
     wlsunset
     obsidian
