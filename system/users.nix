@@ -87,6 +87,16 @@
           btop = {
             enable = true;
           };
+          distrobox = {
+            enable = true;
+            containers = {
+              common-fedora = {
+                additional_packages = "git";
+                image = "fedora:latest";
+              };
+            };
+            enableSystemdUnit = true;
+          };
           gh-dash.enable = true;
           gitui.enable = true;
           eza.enable = true;

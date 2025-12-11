@@ -28,10 +28,8 @@
     ./system/programs.nix
     # Handle networking.
     ./system/networking.nix
-    # Set up Distrobox.
-    ./misc/distrobox.nix
-    # Set up virt-manager.
-    ./misc/virt-manager.nix
+    # Handle virtualization.
+    ./misc/virtualization.nix
     # Set up env. variables.
     ./system/environment.nix
     # Configure Plymouth.
