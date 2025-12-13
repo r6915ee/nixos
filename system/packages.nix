@@ -98,7 +98,7 @@
     libsForQt5.signond
     liboauth
     fastfetch
-    wineWowPackages.stable
+    wineWowPackages.stagingFull
     winetricks
     wineWowPackages.waylandFull
     zed-editor
