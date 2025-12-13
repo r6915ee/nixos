@@ -3,6 +3,22 @@
   imports = [
     <home-manager/nixos>
   ];
+  nixpkgs.overlays = [
+    (final: prev: {
+      vinegar = prev.vinegar.overrideAttrs (
+        finalAttrs: prevAttrs: {
+          version = "1.9.1";
+          src = final.fetchFromGitHub {
+            owner = "vinegarhq";
+            repo = "vinegar";
+            rev = "v${finalAttrs.version}";
+            hash = "sha256-QM5/nZEkGDm7Jp6X9YksiALCTSSBXbPSuny8HPRAQkw=";
+          };
+          vendorHash = "sha256-o1pXB8liOaOd8Nkl5jJ4wP0Q9LDACv/KH8O4iLMsUIQ=";
+        }
+      );
+    })
+  ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kolya = {
     isNormalUser = true;
@@ -96,6 +112,10 @@
               };
             };
             enableSystemdUnit = true;
+          };
+          vinegar = {
+            enable = true;
+            package = pkgs.vinegar;
           };
           gh-dash.enable = true;
           gitui.enable = true;
