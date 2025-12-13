@@ -98,10 +98,10 @@
     libsForQt5.signond
     liboauth
     fastfetch
-    wineWowPackages.stagingFull
+    wineWow64Packages.stagingFull
     winetricks
     umu-launcher
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
     zed-editor
 
     # Configure QEMU
