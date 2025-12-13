@@ -100,6 +100,7 @@
     fastfetch
     wineWowPackages.stagingFull
     winetricks
+    umu-launcher
     wineWowPackages.waylandFull
     zed-editor
 
