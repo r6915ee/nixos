@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     # KDE package set
@@ -10,6 +10,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # UUtils
+    (lib.hiPrio uutils-coreutils-noprefix)
+    (lib.hiPrio uutils-findutils)
+    (lib.hiPrio uutils-diffutils)
     # Generic packages
     quickshell
     gpu-screen-recorder

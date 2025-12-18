@@ -5,8 +5,6 @@
 { pkgs, ... }:
 {
   imports = [
-    # Configure UUtils.
-    ./system/uutils.nix
     # Use generic services.
     # NOTE: Hardware-related services, specifically NVIDIA,
     # are handled through their respective Nix file
