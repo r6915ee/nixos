@@ -36,6 +36,10 @@
       { ... }:
       let
         noctalia-shell = pkgs.callPackage ./custom/noctalia-shell.nix { };
+        yazi-plugins = {
+          base = builtins.fetchTarball "https://github.com/yazi-rs/plugins/archive/refs/heads/main.tar.gz";
+          starship = builtins.fetchTarball "https://github.com/Rolv-Apneseth/starship.yazi/archive/refs/heads/main.tar.gz";
+        };
       in
       {
         home.packages = [
@@ -116,6 +120,56 @@
           vinegar = {
             enable = true;
             package = pkgs.vinegar;
+          };
+          yazi = {
+            enable = true;
+            settings = {
+              mgr = {
+                show_hidden = true;
+              };
+            };
+            plugins = {
+              chmod = "${yazi-plugins.base}/chmod.yazi";
+              git = "${yazi-plugins.base}/git.yazi";
+              diff = "${yazi-plugins.base}/diff.yazi";
+              mount = "${yazi-plugins.base}/mount.yazi";
+              smart-enter = "${yazi-plugins.base}/smart-enter.yazi";
+              starship = "${yazi-plugins.starship}";
+            };
+            initLua = ''
+              require("git"):setup()
+              require("starship"):setup()
+            '';
+            keymap = {
+              mgr = {
+                prepend_keymap = [
+                  {
+                    on = [
+                      "c"
+                      "m"
+                    ];
+                    run = "plugin chmod";
+                    desc = "Chmod on selected files";
+                  }
+                  {
+                    on = [
+                      "<C-d>"
+                    ];
+                    run = "plugin diff";
+                    desc = "Diff the selected file with the hovered file";
+                  }
+                ];
+                append_keymap = [
+                  {
+                    on = [
+                      "l"
+                    ];
+                    run = "plugin smart-enter";
+                    desc = "Enter the child directory, or open the file";
+                  }
+                ];
+              };
+            };
           };
           gh-dash.enable = true;
           gitui.enable = true;

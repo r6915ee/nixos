@@ -58,7 +58,6 @@
     nixfmt
     wl-clipboard-rs
     openssl
-    yazi
     rar
     spotify
     gnome-software
