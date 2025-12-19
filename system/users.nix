@@ -228,6 +228,11 @@
                     desc = "Quit Yazi";
                   }
                   {
+                    on = "<S-q>";
+                    run = "suspend";
+                    desc = "Suspend Yazi";
+                  }
+                  {
                     on = "a";
                     run = "create";
                     desc = "Create a file (ends with / for directories)";
