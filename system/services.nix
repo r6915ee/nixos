@@ -14,6 +14,9 @@
       };
     };
 
+    # Enable Blueman.
+    blueman.enable = true;
+
     # Enable Flatpaks.
     flatpak.enable = true;
 
