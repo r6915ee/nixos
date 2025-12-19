@@ -126,6 +126,18 @@
             settings = {
               mgr = {
                 show_hidden = true;
+                prepend_fetchers = [
+                  {
+                    id = "git";
+                    name = "*";
+                    run = "git";
+                  }
+                  {
+                    id = "git";
+                    name = "*/";
+                    run = "git";
+                  }
+                ];
               };
             };
             plugins = {
@@ -142,7 +154,61 @@
             '';
             keymap = {
               mgr = {
-                prepend_keymap = [
+                keymap = [
+                  # Navigation
+                  {
+                    on = "<Enter>";
+                    run = "plugin smart-enter";
+                    desc = "Enter the child directory, or open the file";
+                  }
+                  {
+                    on = "<Esc>";
+                    run = "escape";
+                    desc = "Exit out of various modes";
+                  }
+                  {
+                    on = "<Backspace>";
+                    run = "leave";
+                    desc = "Go to the parent directory";
+                  }
+                  {
+                    on = "<Up>";
+                    run = "arrow prev";
+                    desc = "Go to the previous sorted file";
+                  }
+                  {
+                    on = "<Down>";
+                    run = "arrow next";
+                    desc = "Go to the next sorted file";
+                  }
+                  # Goto
+                  {
+                    on = [
+                      "g"
+                      "<Space>"
+                    ];
+                    run = "cd --interactive";
+                    desc = "CD to a specified directory";
+                  }
+                  {
+                    on = [
+                      "g"
+                      "r"
+                    ];
+                    run = "shell -- ya emit cd \"$(git rev-parse --show-toplevel)\"";
+                    desc = "Move to the current Git repository's root";
+                  }
+                  {
+                    on = "<Space>";
+                    run = "toggle";
+                    desc = "Select a file";
+                  }
+                  {
+                    on = "<C-a>";
+                    run = "toggle_all";
+                    desc = "Select all files";
+                  }
+                  # Generic file commands
                   {
                     on = [
                       "c"
@@ -152,20 +218,145 @@
                     desc = "Chmod on selected files";
                   }
                   {
-                    on = [
-                      "<C-d>"
-                    ];
+                    on = "<C-d>";
                     run = "plugin diff";
                     desc = "Diff the selected file with the hovered file";
                   }
-                ];
-                append_keymap = [
+                  {
+                    on = "q";
+                    run = "quit";
+                    desc = "Quit Yazi";
+                  }
+                  {
+                    on = "a";
+                    run = "create";
+                    desc = "Create a file (ends with / for directories)";
+                  }
+                  {
+                    on = "l";
+                    run = "link";
+                    desc = "Create a symlink to the yanked files";
+                  }
+                  {
+                    on = "L";
+                    run = "hardlink";
+                    desc = "Create a hard link to the yanked files";
+                  }
+                  {
+                    on = "y";
+                    run = "yank";
+                    desc = "Yank the selected files";
+                  }
+                  {
+                    on = "Y";
+                    run = "unyank";
+                    desc = "Cancel the yank status of files";
+                  }
+                  {
+                    on = "d";
+                    run = "yank --cut";
+                    desc = "Cut the selected files";
+                  }
+                  {
+                    on = "x";
+                    run = "remove --force";
+                    desc = "Trash selected files";
+                  }
+                  {
+                    on = "<S-x>";
+                    run = "remove --force --permanently";
+                    desc = "Permanently delete selected files";
+                  }
+                  {
+                    on = "p";
+                    run = "paste";
+                    desc = "Paste the last yanked files";
+                  }
+                  {
+                    on = "m";
+                    run = "rename";
+                    desc = "Rename all selected files";
+                  }
+                  {
+                    on = ".";
+                    run = "hidden toggle";
+                    desc = "Toggle showing hidden files";
+                  }
+                  # Finding
+                  {
+                    on = "/";
+                    run = "find --smart";
+                    desc = "Find next file";
+                  }
+                  {
+                    on = "?";
+                    run = "find --previous --smart";
+                    desc = "Find previous file";
+                  }
+                  {
+                    on = "n";
+                    run = "find_arrow";
+                    desc = "Next found";
+                  }
+                  {
+                    on = "N";
+                    run = "find_arrow --previous";
+                    desc = "Previous found";
+                  }
+                  # Command-line mode
+                  {
+                    on = ";";
+                    run = "shell --interactive";
+                    desc = "Run a shell command";
+                  }
+                  {
+                    on = ":";
+                    run = "shell --block --interactive";
+                    desc = "Run a shell command (block until command finishes)";
+                  }
+                  # Tabs
                   {
                     on = [
-                      "l"
+                      "t"
+                      "a"
                     ];
-                    run = "plugin smart-enter";
-                    desc = "Enter the child directory, or open the file";
+                    run = "tab_create";
+                    desc = "Create a tab";
+                  }
+                  {
+                    on = [
+                      "t"
+                      "d"
+                    ];
+                    run = "close";
+                    desc = "Close the current tab";
+                  }
+                  {
+                    on = [
+                      "t"
+                      "<Left>"
+                    ];
+                    run = "tab_switch --relative -1";
+                    desc = "Switch to the previous tab";
+                  }
+                  {
+                    on = [
+                      "t"
+                      "<Right>"
+                    ];
+                    run = "tab_switch --relative 1";
+                    desc = "Switch to the next tab";
+                  }
+                  # Misc.
+                  {
+                    on = "v";
+                    run = "visual_mode";
+                    desc = "Switch to visual mode";
+                  }
+                  {
+                    on = "V";
+                    run = "visual_mode --unset";
+                    desc = "Switch to unset visual mode";
                   }
                 ];
               };
