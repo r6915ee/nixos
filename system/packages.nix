@@ -16,6 +16,8 @@
     (lib.hiPrio uutils-diffutils)
     # Generic packages
     quickshell
+    zip
+    unzip
     gpu-screen-recorder
     kdePackages.qtmultimedia
     brightnessctl
