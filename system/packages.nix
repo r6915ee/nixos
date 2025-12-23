@@ -51,6 +51,7 @@
     krita
     rare
     legcord
+    rustlings
     http-server
     polkit
     soteria
