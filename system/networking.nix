@@ -1,9 +1,9 @@
-{...}:
+{ ... }:
 
 {
   networking = {
     firewall = {
-      # allowedTCPPorts = [...];
+      allowedTCPPorts = [ 22 ];
       # allowedUDPPorts = [...];
     };
 
