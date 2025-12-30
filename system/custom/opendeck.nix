@@ -4,7 +4,7 @@
 # Used for fetching the udev rules provided by the repo.
 pkgs.stdenv.mkDerivation {
   name = "rust-elgato-streamdeck";
-  src = builtins.fetchTarball "https://github.com/OpenActionAPI/rust-elgato-streamdeck/archive/refs/heads/main.tar.gz";
+  src = fetchTarball "https://github.com/OpenActionAPI/rust-elgato-streamdeck/archive/refs/heads/main.tar.gz";
   dontConfigure = true;
   dontBuild = true;
   installPhase = ''
