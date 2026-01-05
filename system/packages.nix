@@ -42,7 +42,7 @@
     libreoffice-qt6-fresh
     hunspell
     hunspellDicts.en_US
-    sgdboop
+    # sgdboop
     techmino
     osu-lazer-bin
     # Needed for gtk-launch
