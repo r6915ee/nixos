@@ -64,7 +64,7 @@
     rar
     spotify
     gnome-software
-    libsignon-glib
+    # libsignon-glib
     speechd
     qt6Packages.qtstyleplugin-kvantum
     chawan
@@ -78,10 +78,9 @@
     quickemu
     codeberg-cli
     pciutils
-    rusty-man
     ripgrep
     papirus-icon-theme
-    itch
+    # itch
     inxi
     xwayland-satellite
     cosmic-ext-ctl
