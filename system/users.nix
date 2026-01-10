@@ -73,6 +73,18 @@
               };
             };
           };
+          jujutsu = {
+            enable = true;
+            settings = {
+              user = {
+                name = "r6915ee";
+                email = "astergthefourth@gmail.com";
+              };
+            };
+          };
+          jjui = {
+            enable = true;
+          };
           gh = {
             enable = true;
           };
