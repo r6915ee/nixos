@@ -42,7 +42,6 @@
     libreoffice-qt6-fresh
     hunspell
     hunspellDicts.en_US
-    # sgdboop
     techmino
     osu-lazer-bin
     # Needed for gtk-launch
@@ -107,7 +106,6 @@
     winetricks
     umu-launcher
     wineWow64Packages.waylandFull
-    zed-editor
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''

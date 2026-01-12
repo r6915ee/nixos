@@ -42,8 +42,9 @@
         };
       in
       {
-        home.packages = [
+        home.packages = with pkgs; [
           noctalia-shell
+          sgdboop
         ];
         programs = {
           bash.enable = false;
@@ -52,6 +53,7 @@
             shellAliases = {
               "ls" = "eza";
               "cls" = "clear";
+              "cne" = "lutris lutris:rungame/codename-engine";
             };
             shellAbbrs = {
               "nix-shell" = "nix-shell --run fish";
@@ -70,6 +72,52 @@
               };
               credential = {
                 helper = "libsecret";
+              };
+            };
+          };
+          zed-editor = {
+            enable = true;
+            extensions = [
+              "nix"
+              "toml"
+              "rust"
+              "lua"
+              "git-firefly"
+              "xml"
+              "ruby"
+              "ini"
+              "gdscript"
+              "just"
+              "cargo-tom"
+              "base16"
+              "marksman"
+              "asciidoc"
+              "haxe"
+            ];
+            userSettings = {
+              theme = {
+                mode = "system";
+                dark = "Ayu Dark";
+                light = "Ayu Light";
+              };
+              vim_mode = true;
+              minimap = "auto";
+              buffer_font_family = "SpaceMono Nerd Font";
+              base_keymap = "JetBrains";
+              telemetry.metrics = false;
+              hard_tabs = false;
+              disable_ai = true;
+              terminal.shell.program = "fish";
+              languages = {
+                "Markdown".format_on_save = true;
+                "Lua" = {
+                  tab_size = 3;
+                  format_on_save = true;
+                };
+                "Luau" = {
+                  tab_size = 3;
+                  format_on_save = true;
+                };
               };
             };
           };
