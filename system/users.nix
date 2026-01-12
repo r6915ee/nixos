@@ -89,7 +89,6 @@
               "gdscript"
               "just"
               "base16"
-              "marksman"
               "asciidoc"
               "haxe"
             ];
