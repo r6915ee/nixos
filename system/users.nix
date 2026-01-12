@@ -88,7 +88,6 @@
               "ini"
               "gdscript"
               "just"
-              "cargo-tom"
               "base16"
               "marksman"
               "asciidoc"
