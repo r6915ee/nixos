@@ -101,7 +101,10 @@
                 light = "Ayu Light";
               };
               vim_mode = true;
-              minimap = "auto";
+              minimap = {
+                show = "auto";
+                thumb = "hover";
+              };
               buffer_font_family = "SpaceMono Nerd Font";
               base_keymap = "JetBrains";
               telemetry.metrics = false;
@@ -109,14 +112,14 @@
               disable_ai = true;
               terminal.shell.program = "fish";
               languages = {
-                "Markdown".format_on_save = true;
+                "Markdown".format_on_save = "on";
                 "Lua" = {
                   tab_size = 3;
-                  format_on_save = true;
+                  format_on_save = "on";
                 };
                 "Luau" = {
                   tab_size = 3;
-                  format_on_save = true;
+                  format_on_save = "on";
                 };
               };
             };
