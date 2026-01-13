@@ -29,79 +29,51 @@
     wget
     cava
     wlsunset
-    obsidian
     xdg-desktop-portal
-    vscodium-fhs
     imagemagick
-    neovim
-    mpv
     tinty
     icu
     file
     virtualgl
-    libreoffice-qt6-fresh
     hunspell
     hunspellDicts.en_US
-    techmino
-    osu-lazer-bin
-    # Needed for gtk-launch
-    gtk3
     plasma-panel-colorizer
-    krita
-    rare
-    legcord
     rustlings
     http-server
     polkit
     soteria
     psmisc
-    tlrc
-    yewtube
     nixfmt
     wl-clipboard-rs
     openssl
     rar
-    spotify
-    gnome-software
-    # libsignon-glib
     speechd
     qt6Packages.qtstyleplugin-kvantum
-    chawan
-    asciinema
-    asciinema-agg
     btop
     zenity
     efibootmgr
     OVMF
     qemu
     quickemu
-    codeberg-cli
     pciutils
-    ripgrep
     papirus-icon-theme
     # itch
     inxi
     xwayland-satellite
-    cosmic-ext-ctl
-    # libresprite
     vulkan-loader
     vulkan-validation-layers
     package-version-server
     vulkan-tools
     vlc
     nss
-    bat
     ffmpeg
     lldb
-    zellij
-    audacity
     nil
     nixd
     gparted
     libsForQt5.qoauth
     libsForQt5.signond
     liboauth
-    fastfetch
     wineWow64Packages.stagingFull
     winetricks
     umu-launcher

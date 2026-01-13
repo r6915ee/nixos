@@ -3,22 +3,6 @@
   imports = [
     <home-manager/nixos>
   ];
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     vinegar = prev.vinegar.overrideAttrs (
-  #       finalAttrs: prevAttrs: {
-  #         version = "1.9.1";
-  #         src = final.fetchFromGitHub {
-  #           owner = "vinegarhq";
-  #           repo = "vinegar";
-  #           rev = "v${finalAttrs.version}";
-  #           hash = "sha256-QM5/nZEkGDm7Jp6X9YksiALCTSSBXbPSuny8HPRAQkw=";
-  #         };
-  #         vendorHash = "sha256-o1pXB8liOaOd8Nkl5jJ4wP0Q9LDACv/KH8O4iLMsUIQ=";
-  #       }
-  #     );
-  #   })
-  # ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kolya = {
     isNormalUser = true;
@@ -32,19 +16,59 @@
   };
   home-manager = {
     backupFileExtension = "backup";
+    useGlobalPkgs = true;
     users.kolya =
-      { ... }:
+      {
+        config,
+        lib,
+        pkgs,
+        ...
+      }:
       let
         noctalia-shell = pkgs.callPackage ./custom/noctalia-shell.nix { };
         yazi-plugins = {
           base = fetchTarball "https://github.com/yazi-rs/plugins/archive/refs/heads/main.tar.gz";
           starship = fetchTarball "https://github.com/Rolv-Apneseth/starship.yazi/archive/refs/heads/main.tar.gz";
         };
+
+        inherit (config.lib.file) mkOutOfStoreSymlink;
+        inherit (lib) mergeAttrsList;
+
+        toSrcFile = name: "../dotfiles/${name}";
+
+        link = name: mkOutOfStoreSymlink (toSrcFile name);
+
+        linkFile = name: {
+          ${name}.source = link name;
+        };
+
+        linkDir = name: {
+          ${name} = {
+            source = link name;
+            recursive = true;
+          };
+        };
+
+        confFiles = map linkFile [
+          "niri/config.kdl"
+        ];
+
+        confDirs = map linkDir [ ];
+
+        links = mergeAttrsList (confFiles ++ confDirs);
       in
       {
         home.packages = with pkgs; [
           noctalia-shell
           sgdboop
+          nemo
+          libreoffice-qt-fresh
+          osu-lazer-bin
+          rare
+          legcord
+          tlrc
+          spotify
+          codeberg-cli
         ];
         programs = {
           bash.enable = false;
@@ -424,9 +448,13 @@
               };
             };
           };
+          obsidian.enable = true;
           gh-dash.enable = true;
           gitui.enable = true;
           eza.enable = true;
+          ripgrep.enable = true;
+          bat.enable = true;
+          fastfetch.enable = true;
         };
         services = {
           ssh-agent = {
@@ -438,7 +466,8 @@
           configFile = {
             "ghostty/config".force = true;
             "quickshell/noctalia-shell".source = "${noctalia-shell.out}/bin/";
-          };
+          }
+          // links;
           autostart.enable = true;
         };
         home.stateVersion = "25.05";
