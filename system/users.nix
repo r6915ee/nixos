@@ -69,6 +69,7 @@
           tlrc
           spotify
           codeberg-cli
+          nvtopPackages.nvidia
         ];
         programs = {
           bash.enable = false;
