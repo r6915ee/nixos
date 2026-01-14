@@ -34,7 +34,7 @@
         inherit (config.lib.file) mkOutOfStoreSymlink;
         inherit (lib) mergeAttrsList;
 
-        toSrcFile = name: "../dotfiles/${name}";
+        toSrcFile = name: "/home/kolya/Documents/nixos/dotfiles/${name}";
 
         link = name: mkOutOfStoreSymlink (toSrcFile name);
 
@@ -470,7 +470,9 @@
           // links;
           autostart.enable = true;
         };
-        home.stateVersion = "25.05";
+        home = {
+          stateVersion = "25.05";
+        };
       };
   };
 }
