@@ -26,6 +26,7 @@
       }:
       let
         noctalia-shell = pkgs.callPackage ./custom/noctalia-shell.nix { };
+        appman = pkgs.callPackage ./custom/appman.nix { };
         yazi-plugins = {
           base = fetchTarball "https://github.com/yazi-rs/plugins/archive/refs/heads/main.tar.gz";
           starship = fetchTarball "https://github.com/Rolv-Apneseth/starship.yazi/archive/refs/heads/main.tar.gz";
@@ -51,6 +52,7 @@
 
         confFiles = map linkFile [
           "niri/config.kdl"
+          "appman/appman-config"
         ];
 
         confDirs = map linkDir [ ];
@@ -59,7 +61,11 @@
       in
       {
         home.packages = with pkgs; [
+          # Custom
           noctalia-shell
+          appman
+
+          # Nixpkgs
           sgdboop
           nemo
           libreoffice-qt-fresh
@@ -79,6 +85,7 @@
               "ls" = "eza";
               "cls" = "clear";
               "cne" = "lutris lutris:rungame/codename-engine";
+              "am" = "appman";
             };
             shellAbbrs = {
               "nix-shell" = "nix-shell --run fish";
