@@ -53,6 +53,7 @@
         confFiles = map linkFile [
           "niri/config.kdl"
           "appman/appman-config"
+          "nixpkgs/config.nix"
         ];
 
         confDirs = map linkDir [ ];
