@@ -73,10 +73,10 @@
     libsForQt5.qoauth
     libsForQt5.signond
     liboauth
-    wineWow64Packages.stagingFull
+    wineWowPackages.stagingFull
     winetricks
     umu-launcher
-    wineWow64Packages.waylandFull
+    wineWowPackages.waylandFull
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
