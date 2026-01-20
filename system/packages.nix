@@ -57,7 +57,6 @@
     quickemu
     pciutils
     papirus-icon-theme
-    # itch
     inxi
     xwayland-satellite
     vulkan-loader

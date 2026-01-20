@@ -76,6 +76,7 @@
           tlrc
           spotify
           codeberg-cli
+          itch
           nvtopPackages.nvidia
         ];
         programs = {
