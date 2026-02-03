@@ -125,6 +125,7 @@
               "base16"
               "asciidoc"
               "haxe"
+              "typst"
             ];
             userSettings = {
               theme = {
@@ -143,6 +144,25 @@
               hard_tabs = false;
               disable_ai = true;
               terminal.shell.program = "fish";
+              lsp = {
+                tinymist = {
+                  settings = {
+                    formatterMode = "typstyle";
+                    formatterPrintWidth = 80;
+                  };
+                };
+                package-version-server = {
+                  enable_lsp_tasks = false;
+                };
+                luau-lsp = {
+                  settings = {
+                    luau-lsp = {
+                      plugin.enabled = true;
+                      roblox.enabled = true;
+                    };
+                  };
+                };
+              };
               languages = {
                 "Markdown".format_on_save = "on";
                 "Lua" = {
