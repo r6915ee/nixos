@@ -77,6 +77,7 @@
           spotify
           codeberg-cli
           itch
+          vscodium-fhs
           nvtopPackages.nvidia
         ];
         programs = {
