@@ -173,6 +173,21 @@
                   tab_size = 3;
                   format_on_save = "on";
                 };
+                "Typst" = {
+                  tab_size = 2;
+                  format_on_save = "on";
+                  formatter = {
+                    external = {
+                      command = "typstyle";
+                      arguments = [
+                        "-l"
+                        "80"
+                        "-t"
+                        "2"
+                      ];
+                    };
+                  };
+                };
               };
             };
           };
