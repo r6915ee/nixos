@@ -79,6 +79,7 @@
           itch
           vscodium-fhs
           nvtopPackages.nvidia
+          yt-dlp
         ];
         programs = {
           bash.enable = false;
