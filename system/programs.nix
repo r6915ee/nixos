@@ -21,6 +21,12 @@
     # Enable Niri.
     niri.enable = true;
 
+    # Enable ydotool.
+    ydotool = {
+      enable = true;
+      group = "input";
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;

@@ -73,10 +73,7 @@
     libsForQt5.qoauth
     libsForQt5.signond
     liboauth
-    wineWowPackages.stagingFull
-    winetricks
     umu-launcher
-    wineWowPackages.waylandFull
 
     # Configure QEMU
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
@@ -91,6 +88,8 @@
         libvorbis
         nspr
         xorg.libXdamage
+        libadwaita
+        gtk4
       ];
       extraPkgs = pkgs: [
         vlc

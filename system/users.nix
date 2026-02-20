@@ -10,6 +10,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "input"
     ];
     shell = pkgs.fish;
     packages = [ ];
@@ -502,6 +503,7 @@
           ripgrep.enable = true;
           bat.enable = true;
           fastfetch.enable = true;
+          zoxide.enable = true;
         };
         services = {
           ssh-agent = {
