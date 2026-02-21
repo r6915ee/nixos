@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # List services that you want to enable:
 
@@ -64,13 +64,6 @@
 
     # Enable the Accounts Daemon.
     accounts-daemon.enable = true;
-
-    # Configure udev.
-    udev = {
-      packages = [
-        (pkgs.callPackage ./custom/opendeck.nix { })
-      ];
-    };
   };
 
   # Used for configuring Pipewire.

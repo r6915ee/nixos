@@ -4,7 +4,12 @@
 let
   mainPkg = pkgs.stdenv.mkDerivation rec {
     name = "appman-unwrapped";
-    src = fetchTarball "https://github.com/ivan-hc/AM/archive/refs/heads/main.tar.gz";
+    src = pkgs.fetchFromGitHub {
+      owner = "ivan-hc";
+      repo = "AM";
+      rev = "27d3e686af072852e9c3c03248186c4f6ce986fb";
+      hash = "sha256-nsOKBEPcfFbgGJxAE6wAcOYekDtr8m7ACjVORzIyDCQ=";
+    };
     installPhase = ''
       mkdir -p $out/bin
       install -m +x ${src}/APP-MANAGER $out/bin/appman

@@ -41,7 +41,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Experimental features
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;

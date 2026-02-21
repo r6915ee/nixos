@@ -27,6 +27,14 @@
       group = "input";
     };
 
+    # Configure Git at the system level.
+    git = {
+      enable = true;
+      config = {
+        safe.directory = "*";
+      };
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;

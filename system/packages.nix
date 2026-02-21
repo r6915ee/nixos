@@ -87,7 +87,7 @@
       extraLibraries = pkgs: [
         libvorbis
         nspr
-        xorg.libXdamage
+        libxdamage
         libadwaita
         gtk4
       ];
