@@ -23,9 +23,6 @@
     # Enable FWUPD.
     fwupd.enable = true;
 
-    # Enable cosmic-greeter as the display manager.
-    displayManager.cosmic-greeter.enable = true;
-
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
     # xserver.enable = true;

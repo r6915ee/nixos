@@ -69,6 +69,7 @@
     lldb
     nil
     nixd
+    marksman
     gparted
     libsForQt5.qoauth
     libsForQt5.signond

@@ -21,6 +21,12 @@
     # Enable Niri.
     niri.enable = true;
 
+    # Enable DankGreeter.
+    dank-material-shell.greeter = {
+      enable = true;
+      compositor.name = "niri";
+    };
+
     # Enable ydotool.
     ydotool = {
       enable = true;

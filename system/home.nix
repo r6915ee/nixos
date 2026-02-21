@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -36,6 +37,10 @@ let
   links = mergeAttrsList (confFiles ++ confDirs);
 in
 {
+  imports = [
+    inputs.dms.homeModules.dank-material-shell
+  ];
+
   home = {
     username = "kolya";
     homeDirectory = "/home/kolya";
@@ -237,6 +242,7 @@ in
     bat.enable = true;
     fastfetch.enable = true;
     zoxide.enable = true;
+    dank-material-shell.enable = true;
   };
 
   services = {

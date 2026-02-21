@@ -16,12 +16,11 @@ scan when installing using the graphical NixOS installer.
 You may also change [`system/users.nix`](./system/users.nix), as that details
 user information declaratively.
 
-The configuration directly expects the unstable channel to be used.
+The configuration directly expects the Nixpkgs unstable repository to be used.
 
 The one additional piece of Nix software at play is [Home
 Manager](https://github.com/nix-community/home-manager); specifically, Home
-Manager is expected to be used as a NixOS module. Install it as a Nix channel
-and you should be all good.
+Manager is expected to be used as a Flake input.
 
 ### Programs
 
@@ -39,6 +38,7 @@ Some notable programs include:
 - Steam
 - Zed
 - Niri
+- DankLinux (`dms`, `dms-greeter`)
 
 ## License
 

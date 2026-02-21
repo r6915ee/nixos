@@ -12,7 +12,6 @@
     dolphin-plugins
 
     # Programs
-    kate
     akregator
     kclock
     kdialog
