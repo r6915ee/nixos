@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  getInputPackage,
+  ...
+}:
 {
   imports = [
     # KDE package set
@@ -15,10 +20,9 @@
     (lib.hiPrio uutils-findutils)
     (lib.hiPrio uutils-diffutils)
     # Generic packages
-    quickshell
+    (getInputPackage "templato")
     zip
     unzip
-    gpu-screen-recorder
     kdePackages.qtmultimedia
     brightnessctl
     ddcutil

@@ -3,8 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    templato = {
+      url = "git+https://codeberg.org/r6915ee/templato";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -23,6 +29,13 @@
     }:
     {
       nixosConfigurations.NF2025 = nixpkgs.lib.nixosSystem {
+        specialArgs = rec {
+          inherit inputs;
+          getCustomInputPackage =
+            input: arch: package:
+            (inputs."${input}".packages."${arch}"."${package}");
+          getInputPackage = input: getCustomInputPackage "${input}" "x86_64-linux" "default";
+        };
         modules = [
           ./configuration.nix
           dms.nixosModules.greeter
