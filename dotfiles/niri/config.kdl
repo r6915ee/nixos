@@ -226,7 +226,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -285,7 +285,7 @@ window-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -320,12 +320,6 @@ binds {
     // Open Ghostty.
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 
-    // Various Noctalia-related shortcuts.
-    Alt+Space hotkey-overlay-title="Open the Application Launcher" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+L hotkey-overlay-title="Lock the Screen" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Comma hotkey-overlay-title="Open Noctalia Settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings"; }
-    Mod+V hotkey-overlay-title="Show the Clipboard History" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
@@ -354,14 +348,14 @@ binds {
     Mod+Shift+Up repeat=false { fullscreen-window; }
     Mod+Alt+Up repeat=false { maximize-column; }
 
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
-    // Mod+H     { focus-column-left; }
-    // Mod+J     { focus-window-down; }
-    // Mod+K     { focus-window-up; }
-    // Mod+L     { focus-column-right; }
+    // Mod+Left  { focus-column-left; }
+    // Mod+Down  { focus-window-down; }
+    // Mod+Up    { focus-window-up; }
+    // Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
