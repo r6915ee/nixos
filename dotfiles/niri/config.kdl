@@ -348,14 +348,14 @@ binds {
     Mod+Shift+Up repeat=false { fullscreen-window; }
     Mod+Alt+Up repeat=false { maximize-column; }
 
-    // Mod+Left  { focus-column-left; }
-    // Mod+Down  { focus-window-down; }
-    // Mod+Up    { focus-window-up; }
-    // Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    // Mod+H     { focus-column-left; }
+    // Mod+J     { focus-window-down; }
+    // Mod+K     { focus-window-up; }
+    // Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
