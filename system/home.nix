@@ -63,6 +63,7 @@ in
       vscodium-fhs
       nvtopPackages.nvidia
       yt-dlp
+      devenv
     ];
   };
 
