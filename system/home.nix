@@ -97,6 +97,9 @@ in
         };
       };
     };
+    micro = {
+      enable = true;
+    };
     zed-editor = {
       enable = true;
       extensions = [
