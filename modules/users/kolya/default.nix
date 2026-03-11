@@ -52,6 +52,7 @@
         imports = [
           inputs.dms.homeModules.dank-material-shell
         ];
+        nixpkgs.config.allowUnfree = true;
         home = {
           username = "kolya";
           homeDirectory = "/home/kolya";

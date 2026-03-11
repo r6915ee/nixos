@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
   den.hosts.x86_64-linux.NF2025.users.kolya = { };
 
@@ -12,6 +12,10 @@
     nixos =
       { pkgs, config, ... }:
       {
+        imports = [
+          inputs.dms.nixosModules.greeter
+        ];
+
         # Virtualisation
         virtualisation.podman = {
           enable = true;

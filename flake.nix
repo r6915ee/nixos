@@ -38,22 +38,8 @@
           ];
           specialArgs.inputs = inputs;
         }).config;
-
-      inherit (den.den.hosts.x86_64-linux) NF2025;
     in
     {
-      nixosConfigurations.NF2025 = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-          inputs.dms.nixosModules.greeter
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-          }
-          NF2025.mainModule
-        ];
-      };
+      inherit (den.flake) nixosConfigurations;
     };
 }
