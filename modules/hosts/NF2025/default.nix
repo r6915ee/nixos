@@ -48,7 +48,7 @@
           (lib.hiPrio uutils-findutils)
           (lib.hiPrio uutils-diffutils)
           # Generic packages
-          # (getInputPackage "templato")
+          (inputs.templato.packages.x86_64-linux.default)
           zip
           unzip
           kdePackages.qtmultimedia

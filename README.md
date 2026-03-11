@@ -3,24 +3,17 @@
 This is a NixOS configuration for my own setup.
 
 The configuration is designed to be modular. Because of this, it's split into
-separate files, each with their own unique task.
+separate files, each with their own unique task. It performs this using the
+[`den`](https://den.oeiuwq.com/) library.
 
 ## Usage
 
-If you want to directly use this configuration, then make sure to change
-both files under [`hardware`](./hardware/). Both of the files under there are
-hardware-specific, supporting NVIDIA. `configuration.nix` under that directory
-is for NVIDIA and ALSA, and `scan.nix` is what was generated from the hardware
-scan when installing using the graphical NixOS installer.
+The configuration directly expects the NixOS unstable repository to be used.
 
-You may also change [`system/users.nix`](./system/users.nix), as that details
-user information declaratively.
-
-The configuration directly expects the Nixpkgs unstable repository to be used.
-
-The one additional piece of Nix software at play is [Home
-Manager](https://github.com/nix-community/home-manager); specifically, Home
-Manager is expected to be used as a Flake input.
+Perhaps the two most important inputs for the flake are [Home
+Manager](https://github.com/nix-community/home-manager/)) and, of course,
+`den`. These are provided as Flake inputs. No other inputs exist for the flake,
+with the exceptions of programs that are provided as inputs, e.g. `dms`.
 
 ### Programs
 
