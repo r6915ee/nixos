@@ -26,23 +26,23 @@
   outputs =
     inputs:
     let
+      lib = inputs.nixpkgs.lib;
       den =
         (inputs.nixpkgs.lib.evalModules {
-          modules = [ (inputs.import-tree ./modules) ];
+          modules = [
+            (lib.pipe inputs.import-tree [
+              (i: i.filterNot (lib.hasInfix "custom"))
+              (i: i.filterNot (lib.hasInfix "dotfiles"))
+              (i: i ./modules)
+            ])
+          ];
           specialArgs.inputs = inputs;
         }).config;
 
-      inherit (den.den.hosts.x86_64-linux) nf;
+      inherit (den.den.hosts.x86_64-linux) NF2025;
     in
     {
       nixosConfigurations.NF2025 = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = rec {
-          inherit inputs;
-          getCustomInputPackage =
-            input: arch: package:
-            (inputs.${input}.packages.${arch}.${package});
-          getInputPackage = input: getCustomInputPackage input "x86_64-linux" "default";
-        };
         modules = [
           ./configuration.nix
           inputs.dms.nixosModules.greeter
@@ -51,9 +51,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.kolya = import ./system/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
           }
+          NF2025.mainModule
         ];
       };
     };

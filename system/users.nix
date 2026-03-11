@@ -9,7 +9,6 @@
       "wheel"
       "input"
     ];
-    shell = pkgs.fish;
     packages = [ ];
   };
 }

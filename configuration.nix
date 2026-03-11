@@ -2,52 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
-    # Use generic services.
-    # NOTE: Hardware-related services, specifically NVIDIA,
-    # are handled through their respective Nix file
-    # instead.
-    ./system/services.nix
-    # Include the results of the hardware scan.
-    ./hardware/scan.nix
-    # Set up the hardware attribute.
-    ./hardware/configuration.nix
     # Manage users. Will also configure Home Manager.
     ./system/users.nix
     # Manage security.
     ./system/security.nix
-    # Manage fonts.
-    ./system/fonts.nix
-    # Manage system packages.
-    ./system/packages.nix
-    # Manage common programs.
-    ./system/programs.nix
-    # Handle networking.
-    ./system/networking.nix
-    # Handle virtualization.
-    ./misc/virtualization.nix
-    # Set up env. variables.
-    ./system/environment.nix
-    # Configure Plymouth.
-    ./misc/plymouth.nix
     # Configure time and locale.
     ./system/time-locale.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Experimental features
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

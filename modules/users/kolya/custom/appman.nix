@@ -1,5 +1,6 @@
 {
   pkgs,
+  ...
 }:
 let
   mainPkg = pkgs.stdenv.mkDerivation rec {
