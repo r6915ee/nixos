@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,28 +17,36 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    import-tree.url = "github:vic/import-tree";
+    flake-aspects.url = "github:vic/flake-aspects";
+    den.url = "github:vic/den";
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      dms,
-      ...
-    }:
+    inputs:
+    let
+      den =
+        (inputs.nixpkgs.lib.evalModules {
+          modules = [ (inputs.import-tree ./modules) ];
+          specialArgs.inputs = inputs;
+        }).config;
+
+      inherit (den.den.hosts.x86_64-linux) nf;
+    in
     {
-      nixosConfigurations.NF2025 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.NF2025 = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = rec {
           inherit inputs;
           getCustomInputPackage =
             input: arch: package:
-            (inputs."${input}".packages."${arch}"."${package}");
-          getInputPackage = input: getCustomInputPackage "${input}" "x86_64-linux" "default";
+            (inputs.${input}.packages.${arch}.${package});
+          getInputPackage = input: getCustomInputPackage input "x86_64-linux" "default";
         };
         modules = [
           ./configuration.nix
-          dms.nixosModules.greeter
-          home-manager.nixosModules.home-manager
+          inputs.dms.nixosModules.greeter
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
