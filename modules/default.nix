@@ -17,7 +17,7 @@
         "nix-command"
         "flakes"
       ];
-      boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelPackages = pkgs.linuxPackages_zen;
       security.sudo.enable = false;
       security.doas = {
         enable = true;
