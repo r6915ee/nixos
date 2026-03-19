@@ -75,7 +75,8 @@
             vscodium-fhs
             nvtopPackages.nvidia
             yt-dlp
-            devenv
+            inputs.devenv.packages.${system}.devenv
+            inkscape-with-extensions
           ];
         };
         programs = {
