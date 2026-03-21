@@ -24,6 +24,7 @@
             nerd-fonts.space-mono
           ];
           fontDir.enable = true;
+          fontconfig.enable = true;
         };
 
         # Networking
