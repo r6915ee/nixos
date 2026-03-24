@@ -90,6 +90,7 @@
             };
             shellAbbrs = {
               "nix-shell" = "nix-shell --run fish";
+              "zed" = "zeditor";
             };
             shellInit = ''
               starship init fish | source
