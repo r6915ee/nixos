@@ -13,6 +13,9 @@
         localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
       };
 
+      # Enable nix-ld.
+      nix-ld.enable = true;
+
       # Enable AppImages.
       appimage = {
         enable = true;
