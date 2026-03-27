@@ -77,6 +77,7 @@
             yt-dlp
             inputs.devenv.packages.${system}.devenv
             inkscape-with-extensions
+            gimp-with-plugins
           ];
         };
         programs = {
@@ -226,7 +227,7 @@
             settings = {
               command = "fish";
               theme = "Ayu";
-              font-family = "SpaceMono Nerd Font";
+              font-family = "0xProto Nerd Font";
             };
           };
           keepassxc = {
