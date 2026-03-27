@@ -142,7 +142,7 @@
                 show = "auto";
                 thumb = "hover";
               };
-              buffer_font_family = "SpaceMono Nerd Font";
+              buffer_font_family = "0xProto Nerd Font";
               base_keymap = "JetBrains";
               telemetry.metrics = false;
               hard_tabs = false;
