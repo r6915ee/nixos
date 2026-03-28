@@ -23,7 +23,8 @@
         inherit (config.lib.file) mkOutOfStoreSymlink;
         inherit (lib) mergeAttrsList;
 
-        toSrcFile = name: "${toString ./.}/dotfiles/${name}";
+        root = "/etc/nixos/modules/users/kolya";
+        toSrcFile = name: "${root}/dotfiles/${name}";
 
         link = name: mkOutOfStoreSymlink (toSrcFile name);
 
@@ -44,9 +45,11 @@
           "nixpkgs/config.nix"
         ];
 
-        confDirs = map linkDir [ ];
+        confDirs = map linkDir [ "flow" ];
 
         links = mergeAttrsList (confFiles ++ confDirs);
+
+        homeDir = "/home/kolya";
       in
       {
         imports = [
@@ -56,7 +59,10 @@
         nixpkgs.config.allowUnfree = true;
         home = {
           username = "kolya";
-          homeDirectory = "/home/kolya";
+          homeDirectory = homeDir;
+          sessionVariables = {
+            FLOW_CONFIG_DIR = toSrcFile "flow";
+          };
           packages = with pkgs; [
             # Custom packages
             appman
@@ -78,6 +84,7 @@
             inputs.devenv.packages.${system}.devenv
             inkscape-with-extensions
             gimp-with-plugins
+            flow-control
           ];
         };
         programs = {
@@ -109,9 +116,6 @@
                 helper = "libsecret";
               };
             };
-          };
-          micro = {
-            enable = true;
           };
           zed-editor = {
             enable = true;

@@ -1,0 +1,3 @@
+include_files "/etc/nixos/modules/users/kolya/dotfiles/flow/readonly/conf"
+# default value: ""
+# value type: quoted string of : separated paths

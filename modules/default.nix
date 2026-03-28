@@ -8,6 +8,7 @@
       environment.sessionVariables = {
         COSMIC_DATA_CONTROL_ENABLED = 1;
         QS_ICON_THEME = "Papirus-Dark";
+        FLAKE = "/etc/nixos";
       };
       environment.systemPackages = with pkgs; [
         nixos-facter
