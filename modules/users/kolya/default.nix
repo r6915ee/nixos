@@ -85,6 +85,7 @@
             inkscape-with-extensions
             gimp-with-plugins
             flow-control
+            kdePackages.kclock
           ];
         };
         programs = {
