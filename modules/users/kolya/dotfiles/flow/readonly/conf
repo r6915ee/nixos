@@ -116,7 +116,7 @@ enable_format_on_save true
 # default_cursor "default"
 # value type: one of "default", "block_blink", "block", "underline_blink", "underline", "beam_blink", "beam"
 
-# modes_can_change_cursor true
+modes_can_change_cursor true
 # value type: true or false
 
 # enable_auto_save false
