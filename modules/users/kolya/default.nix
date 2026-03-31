@@ -73,7 +73,7 @@
             libreoffice-qt-fresh
             osu-lazer-bin
             rare
-            legcord
+            equibop
             tlrc
             spotify
             codeberg-cli
