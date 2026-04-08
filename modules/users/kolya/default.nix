@@ -95,6 +95,7 @@
               "ls" = "eza";
               "cls" = "clear";
               "cne" = "lutris lutris:rungame/codename-engine";
+              "fnf" = "lutris lutris:rungame/friday-night-funkin";
               "am" = "appman";
             };
             shellAbbrs = {
