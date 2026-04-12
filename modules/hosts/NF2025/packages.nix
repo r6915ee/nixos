@@ -21,6 +21,7 @@
         brightnessctl
         ddcutil
         cliphist
+        fragments
         cabextract
         matugen
         nautilus
