@@ -268,9 +268,9 @@
                 enable = true;
                 package = pkgs.libretro.mgba;
               };
-              melonds = {
+              desmume = {
                 enable = true;
-                package = pkgs.libretro.melonds;
+                package = pkgs.libretro.desmume;
               };
             };
           };
