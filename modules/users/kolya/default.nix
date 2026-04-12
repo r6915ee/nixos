@@ -257,6 +257,23 @@
             };
             enableSystemdUnit = true;
           };
+          retroarch = {
+            enable = true;
+            cores = {
+              snes9x = {
+                enable = true;
+                package = pkgs.libretro.snes9x;
+              };
+              mgba = {
+                enable = true;
+                package = pkgs.libretro.mgba;
+              };
+              melonds = {
+                enable = true;
+                package = pkgs.libretro.melonds;
+              };
+            };
+          };
           obsidian.enable = true;
           gh-dash.enable = true;
           gitui.enable = true;
