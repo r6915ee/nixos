@@ -268,9 +268,18 @@
                 enable = true;
                 package = pkgs.libretro.mgba;
               };
+              # Albeit melonds is preferred, desmume is kept for legacy purposes.
               desmume = {
                 enable = true;
                 package = pkgs.libretro.desmume;
+              };
+              melonds = {
+                enable = true;
+                package = (
+                  pkgs.libretro.melonds.overrideDerivation (old: {
+                    NIX_CFLAGS_COMPILE = "-Wl,-z,noexecstack";
+                  })
+                );
               };
             };
           };
