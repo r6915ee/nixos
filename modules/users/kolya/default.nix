@@ -323,6 +323,7 @@
               "app.zen_browser.zen"
               "com.obsproject.Studio"
               "com.github.tchx84.Flatseal"
+              "info.beyondallreason.bar"
             ];
           };
           kdeconnect.enable = true;
