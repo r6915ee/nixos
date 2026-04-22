@@ -37,9 +37,16 @@
 
         # Networking
         networking = {
-          firewall = {
+          firewall = rec {
             allowedTCPPorts = [ 22 ];
             # allowedUDPPorts = [...];
+            allowedTCPPortRanges = [
+              {
+                from = 1714;
+                to = 1764;
+              }
+            ];
+            allowedUDPPortRanges = allowedTCPPortRanges;
           };
 
           hostName = "NF2025";
