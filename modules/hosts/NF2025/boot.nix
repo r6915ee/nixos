@@ -12,7 +12,7 @@
         "splash"
         "rd.systemd.show_status=auto"
       ];
-      loader.systemd-boot.enable = true;
+      loader.limine.enable = true;
     };
   };
 }
