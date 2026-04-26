@@ -5,9 +5,9 @@
     {
       imports = [
         inputs.dms.nixosModules.greeter
-        # inputs.niri.nixosModules.niri
+        inputs.niri.nixosModules.niri
       ];
-      # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       programs = {
         # Install Steam.
         steam = {
@@ -29,6 +29,7 @@
         # Enable Niri.
         niri = {
           enable = true;
+          package = pkgs.niri-unstable;
         };
 
         # Enable DankGreeter.
