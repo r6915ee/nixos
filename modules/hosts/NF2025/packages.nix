@@ -84,6 +84,24 @@
 
         # Lutris
         (lutris.override {
+          buildFHSEnv =
+            args:
+            pkgs.buildFHSEnv (
+              args
+              // {
+                multiPkgs =
+                  envPkgs:
+                  let
+                    originalPkgs = args.multiPkgs envPkgs;
+
+                    customLdap = envPkgs.openldap.overrideAttrs (_: {
+                      doCheck = false;
+                    });
+                  in
+                  # Replace broken openldap with the custom one
+                  builtins.filter (p: (p.pname or "") != "openldap") originalPkgs ++ [ customLdap ];
+              }
+            );
           extraLibraries = pkgs: [
             libvorbis
             nspr

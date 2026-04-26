@@ -10,6 +10,9 @@
       den.provides.primary-user
       (den.provides.user-shell "fish")
     ];
+    user = {
+      extraGroups = [ "cups" ];
+    };
     homeManager =
       {
         pkgs,
