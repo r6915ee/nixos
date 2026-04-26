@@ -17,6 +17,7 @@
         (inputs.templato.packages.x86_64-linux.default)
         zip
         unzip
+        cachix
         kdePackages.qtmultimedia
         brightnessctl
         ddcutil

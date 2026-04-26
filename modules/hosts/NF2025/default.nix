@@ -13,6 +13,10 @@
     nixos =
       { pkgs, config, ... }:
       {
+        imports = [
+          ../../../cachix.nix
+        ];
+
         # Fonts
         fonts = {
           packages = with pkgs; [
