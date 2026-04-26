@@ -26,6 +26,12 @@
           binfmt = true;
         };
 
+        # Enable nh.
+        nh = {
+          enable = true;
+          clean.enable = true;
+        };
+
         # Enable Niri.
         niri = {
           enable = true;

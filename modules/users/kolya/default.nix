@@ -244,10 +244,6 @@
             enable = true;
             autostart = true;
           };
-          nh = {
-            enable = true;
-            clean.enable = true;
-          };
           btop = {
             enable = true;
           };
