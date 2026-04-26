@@ -14,6 +14,9 @@
           };
         };
 
+        # Enable system76-scheduler.
+        system76-scheduler.enable = true;
+
         # Enable Blueman.
         blueman.enable = true;
 
