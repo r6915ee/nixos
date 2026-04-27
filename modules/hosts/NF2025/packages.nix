@@ -28,6 +28,7 @@
         nautilus
         wget
         cava
+        rnote
         wlsunset
         xdg-desktop-portal
         imagemagick
