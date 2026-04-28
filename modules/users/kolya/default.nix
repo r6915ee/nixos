@@ -78,6 +78,7 @@
             osu-lazer-bin
             rare
             equibop
+            discordo
             tlrc
             spotify
             codeberg-cli
