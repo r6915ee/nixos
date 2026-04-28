@@ -51,6 +51,7 @@
         speechd
         qt6Packages.qtstyleplugin-kvantum
         btop
+        alejandra
         zenity
         efibootmgr
         OVMF
