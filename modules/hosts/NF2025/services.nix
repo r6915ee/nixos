@@ -47,8 +47,11 @@
         # Enable CUPS to print documents.
         printing = {
           enable = true;
-          drivers = [
-            pkgs.brlaser
+          browsed.enable = false;
+          drivers = with pkgs; [
+            brlaser
+            brgenml1lpr
+            brgenml1cupswrapper
           ];
         };
 
