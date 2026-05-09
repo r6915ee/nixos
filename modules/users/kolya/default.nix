@@ -95,6 +95,10 @@
         };
         programs = {
           bash.enable = false;
+          mangohud = {
+            enable = true;
+            enableSessionWide = true;
+          };
           fish = {
             shellAliases = {
               "ls" = "eza";
