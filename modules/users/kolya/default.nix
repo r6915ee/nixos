@@ -77,7 +77,6 @@
             libreoffice-qt-fresh
             osu-lazer-bin
             rare
-            equibop
             discordo
             tlrc
             spotify
@@ -329,6 +328,7 @@
               "com.obsproject.Studio"
               "com.github.tchx84.Flatseal"
               "info.beyondallreason.bar"
+              "com.discordapp.Discord"
             ];
           };
           kdeconnect.enable = true;
