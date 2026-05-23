@@ -2,7 +2,6 @@
   den.default.nixos =
     { pkgs, ... }:
     {
-      system.stateVersion = "25.05";
       nixpkgs.config.allowUnfree = true;
       environment.localBinInPath = true;
       environment.sessionVariables = {
@@ -24,7 +23,10 @@
         enable = true;
         extraRules = [
           {
-            users = [ "kolya" ];
+            users = [
+              "kolya"
+              "decky"
+            ];
             keepEnv = true;
             persist = true;
           }
@@ -44,5 +46,4 @@
         LC_TIME = "en_US.UTF-8";
       };
     };
-  den.default.homeManager.home.stateVersion = "25.05";
 }

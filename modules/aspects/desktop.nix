@@ -1,13 +1,31 @@
 { inputs, ... }:
 {
-  den.aspects.NF2025.nixos =
-    { pkgs, ... }:
-    {
-      imports = [
-        inputs.dms.nixosModules.greeter
-        inputs.niri.nixosModules.niri
-      ];
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  den.aspects.custom.desktop = {
+    provides.niri.nixos =
+      { pkgs, ... }:
+      {
+        imports = [
+          inputs.dms.nixosModules.greeter
+          inputs.niri.nixosModules.niri
+        ];
+        nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
+        programs = {
+          # Enable Niri.
+          niri = {
+            enable = true;
+            package = pkgs.niri-unstable;
+          };
+
+          # Enable DankGreeter.
+          dank-material-shell.greeter = {
+            enable = true;
+            compositor.name = "niri";
+          };
+        };
+      };
+
+    nixos = {
       programs = {
         # Install Steam.
         steam = {
@@ -30,18 +48,6 @@
         nh = {
           enable = true;
           clean.enable = true;
-        };
-
-        # Enable Niri.
-        niri = {
-          enable = true;
-          package = pkgs.niri-unstable;
-        };
-
-        # Enable DankGreeter.
-        dank-material-shell.greeter = {
-          enable = true;
-          compositor.name = "niri";
         };
 
         # Enable ydotool.
@@ -67,4 +73,5 @@
         # };
       };
     };
+  };
 }

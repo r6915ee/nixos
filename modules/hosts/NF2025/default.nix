@@ -1,6 +1,9 @@
 { den, ... }:
 {
-  den.hosts.x86_64-linux.NF2025.users.kolya = { };
+  den.hosts.x86_64-linux.NF2025 = {
+    hostName = "NF2025";
+    users.kolya = { };
+  };
 
   # A system specialized for desktop usage in general. Includes general purpose
   # tools, gaming purposes, virtualisation, and more. The following code
@@ -8,69 +11,31 @@
   den.aspects.NF2025 = {
     includes = [
       den.provides.hostname
-      den.aspects.hardware
+
+      den.aspects.custom.hardware
+      den.aspects.custom.network
+      den.aspects.custom.fonts
+      den.aspects.custom.xdg
+
+      den.aspects.custom.boot
+
+      den.aspects.custom.desktop
+      den.aspects.custom.desktop.niri
     ];
     nixos =
-      { pkgs, config, ... }:
+      { config, ... }:
       {
         imports = [
           ../../../cachix.nix
         ];
 
-        # Fonts
-        fonts = {
-          packages = with pkgs; [
-            roboto
-            inter
-            nerd-fonts.jetbrains-mono
-            nerd-fonts.fira-code
-            nerd-fonts.fira-mono
-            nerd-fonts.space-mono
-            nerd-fonts._0xproto
-            noto-fonts
-          ];
-          fontDir.enable = true;
-          fontconfig = {
-            enable = true;
-            defaultFonts = {
-              sansSerif = [ "Inter" ];
-              monospace = [ "SpaceMono Nerd Font" ];
-            };
-          };
-        };
+        system.stateVersion = "25.05";
 
-        # Networking
-        networking = {
-          firewall = rec {
-            allowedTCPPorts = [ 22 ];
-            # allowedUDPPorts = [...];
-            allowedTCPPortRanges = [
-              {
-                from = 1714;
-                to = 1764;
-              }
-            ];
-            allowedUDPPortRanges = allowedTCPPortRanges;
-          };
-
-          hostName = "NF2025";
-
-          networkmanager.enable = true;
-
-          proxy = {
-            # default = "http://user:password@proxy:port/";
-            # noProxy = "127.0.0.1,localhost,internal.domain";
-          };
-        };
+        # Set the hostname.
+        networking.hostName = "NF2025";
 
         # Used for configuring Pipewire.
         security.rtkit.enable = true;
-
-        # Configure XDG Portals.
-        xdg.portal = {
-          enable = true;
-          xdgOpenUsePortal = true;
-        };
 
         # Load NVIDIA driver.
         services.xserver.videoDrivers = [ "nvidia" ];

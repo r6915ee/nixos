@@ -1,5 +1,5 @@
 {
-  den.aspects.NF2025.nixos = {
+  den.aspects.custom.boot.nixos = {
     boot = {
       plymouth = {
         enable = true;

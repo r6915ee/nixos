@@ -64,6 +64,7 @@
         home = {
           username = "kolya";
           homeDirectory = homeDir;
+          stateVersion = "25.05";
           sessionVariables = {
             FLOW_CONFIG_DIR = toSrcFile "flow";
             SOBER_USE_NEW_TEXT_RENDERER = "1";

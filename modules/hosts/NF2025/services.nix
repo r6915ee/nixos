@@ -6,7 +6,10 @@
         # Enable the OpenSSH daemon.
         openssh = {
           enable = true;
-          ports = [ 22 ];
+          ports = [
+            22
+            5432
+          ];
           settings = {
             PasswordAuthentication = true;
             AllowUsers = null;
@@ -76,9 +79,6 @@
           # no need to redefine it in your config for now)
           #media-session.enable = true;
         };
-
-        # Enable the Accounts Daemon.
-        accounts-daemon.enable = true;
       };
     };
 }
