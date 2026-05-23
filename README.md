@@ -1,32 +1,22 @@
-# r6915ee's NixOS Configuration
+# BalladOS
 
 This is a NixOS configuration for my own setup.
 
-The configuration is designed to be modular. Because of this, it's split into
-separate files, each with their own unique task. It performs this using the
-[`den`](https://den.oeiuwq.com/) library.
+The core of the configuration is based on a single Nix flake but, more
+importantly, the [`den`](https://den.oeiuwq.com/) library. The library allows
+splitting and sharing configuration, which is used often here to support
+consistency between machines.
 
-## Usage
-
-The configuration directly expects the NixOS unstable repository to be used.
-
-Perhaps the two most important inputs for the flake are [Home
-Manager](https://github.com/nix-community/home-manager/)) and, of course,
-`den`. These are provided as Flake inputs. No other inputs exist for the flake,
-with the exceptions of programs that are provided as inputs, e.g. `dms`.
+The flake is based on the `nixos-unstable` branch of Nixpkgs.
 
 ### Programs
 
 Some notable programs include:
 
 - Fish
-- Starship
 - Ghostty
-- KDE Plasma
-- COSMIC
 - Flatpak
-- uutils (replacement for GNU utils, e.g. coreutils)
-- Legcord (Discord client)
+- uutils
 - Lutris
 - Steam
 - Zed
@@ -35,7 +25,5 @@ Some notable programs include:
 
 ## License
 
-Although the repository was previously licensed under the MIT license, this is
-no longer the case, since it wouldn't make sense for something like a set of
-configuration files having a license. You are free to use any of the
-configuration as you please.
+The repository is licensed under the [WTFPL license](LICENSE). In short, you
+are able to do anything with the code provided in this repository.
