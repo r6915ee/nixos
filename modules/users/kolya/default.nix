@@ -11,6 +11,20 @@
       den.aspects.programs.zeditor
       den.aspects.cursor
       (den.provides.user-shell "fish")
+      (den.aspects.flatpak [
+        "org.srb2.SRB2"
+        "org.vinegarhq.Sober"
+        "org.vinegarhq.Vinegar"
+        "org.kartkrew.RingRacers"
+        "io.github.dvlv.boxbuddyrs"
+        "com.vysp3r.ProtonPlus"
+        "com.core447.StreamController"
+        "app.zen_browser.zen"
+        "com.obsproject.Studio"
+        "com.github.tchx84.Flatseal"
+        "info.beyondallreason.bar"
+        "com.discordapp.Discord"
+      ])
     ];
     user = {
       extraGroups = [ "cups" ];
@@ -58,7 +72,6 @@
       in
       {
         imports = [
-          inputs.dms.homeModules.dank-material-shell
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
         ];
         nixpkgs.config.allowUnfree = true;
@@ -139,12 +152,6 @@
               };
             };
           };
-          jjui = {
-            enable = true;
-          };
-          gh = {
-            enable = true;
-          };
           helix = {
             enable = true;
             defaultEditor = true;
@@ -168,9 +175,6 @@
           keepassxc = {
             enable = true;
             autostart = true;
-          };
-          btop = {
-            enable = true;
           };
           distrobox = {
             enable = true;
@@ -208,6 +212,8 @@
               };
             };
           };
+          btop.enable = true;
+          gh.enable = true;
           obsidian.enable = true;
           gh-dash.enable = true;
           gitui.enable = true;
@@ -216,37 +222,10 @@
           bat.enable = true;
           fastfetch.enable = true;
           zoxide.enable = true;
-          dank-material-shell.enable = true;
         };
         services = {
           ssh-agent = {
             enable = true;
-          };
-          flatpak = {
-            remotes = [
-              {
-                name = "flathub";
-                location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-              }
-              {
-                name = "flathub-beta";
-                location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-              }
-            ];
-            packages = [
-              "org.srb2.SRB2"
-              "org.vinegarhq.Sober"
-              "org.vinegarhq.Vinegar"
-              "org.kartkrew.RingRacers"
-              "io.github.dvlv.boxbuddyrs"
-              "com.vysp3r.ProtonPlus"
-              "com.core447.StreamController"
-              "app.zen_browser.zen"
-              "com.obsproject.Studio"
-              "com.github.tchx84.Flatseal"
-              "info.beyondallreason.bar"
-              "com.discordapp.Discord"
-            ];
           };
           kdeconnect.enable = true;
         };

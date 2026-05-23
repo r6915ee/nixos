@@ -1,30 +1,43 @@
-{ inputs, ... }:
+{ inputs, den, ... }:
 {
   den.aspects.desktop = {
+    includes = [
+      (den.aspects.flatpak [ ])
+    ];
+
     provides = {
-      niri.nixos =
-        { pkgs, ... }:
-        {
-          imports = [
-            inputs.dms.nixosModules.greeter
-            inputs.niri.nixosModules.niri
-          ];
-          nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      niri = {
+        nixos =
+          { pkgs, ... }:
+          {
+            imports = [
+              inputs.dms.nixosModules.greeter
+              inputs.niri.nixosModules.niri
+            ];
+            nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
-          programs = {
-            # Enable Niri.
-            niri = {
-              enable = true;
-              package = pkgs.niri-unstable;
-            };
+            programs = {
+              # Enable Niri.
+              niri = {
+                enable = true;
+                package = pkgs.niri-unstable;
+              };
 
-            # Enable DankGreeter.
-            dank-material-shell.greeter = {
-              enable = true;
-              compositor.name = "niri";
+              # Enable DankGreeter.
+              dank-material-shell.greeter = {
+                enable = true;
+                compositor.name = "niri";
+              };
             };
           };
+        homeManager = {
+          imports = [
+            inputs.dms.homeModules.dank-material-shell
+          ];
+
+          programs.dank-material-shell.enable = true;
         };
+      };
 
       ydotool.nixos.programs.ydotool = {
         enable = true;
@@ -84,7 +97,6 @@
           system76-scheduler.enable = true;
           blueman.enable = true;
           xserver.enable = false;
-          flatpak.enable = true;
 
           xserver.xkb = {
             layout = "us";
