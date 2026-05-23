@@ -16,6 +16,8 @@
             ];
             nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
+            environment.systemPackages = [ pkgs.xwayland-satellite ];
+
             programs = {
               # Enable Niri.
               niri = {
@@ -52,8 +54,6 @@
           vulkan-loader
           vulkan-validation-layers
           vulkan-tools
-
-          xwayland-satellite
         ];
 
         hardware.graphics = {
