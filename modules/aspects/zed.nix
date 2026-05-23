@@ -2,7 +2,7 @@
   ...
 }:
 {
-  den.aspects.custom.zeditor.homeManager.programs.zed-editor = {
+  den.aspects.programs.zeditor.homeManager.programs.zed-editor = {
     enable = true;
     extensions = [
       "nix"

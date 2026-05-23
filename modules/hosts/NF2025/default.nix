@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, lib, ... }:
 {
   den.hosts.x86_64-linux.NF2025 = {
     hostName = "NF2025";
@@ -12,16 +12,21 @@
     includes = [
       den.provides.hostname
 
-      den.aspects.custom.hardware
-      den.aspects.custom.network
-      den.aspects.custom.fonts
-      den.aspects.custom.xdg
+      den.aspects.hardware
+      den.aspects.network
+      den.aspects.fonts
+      den.aspects.xdg
+      den.aspects.virt
 
-      den.aspects.custom.boot
+      den.aspects.boot
 
-      den.aspects.custom.desktop
-      den.aspects.custom.desktop.niri
-    ];
+      den.aspects.gaming
+      den.aspects.desktop
+      den.aspects.desktop.niri
+      den.aspects.desktop.ydotool
+    ]
+    ++ lib.attrValues den.aspects.desktop.provides;
+
     nixos =
       { config, ... }:
       {
@@ -30,12 +35,6 @@
         ];
 
         system.stateVersion = "25.05";
-
-        # Set the hostname.
-        networking.hostName = "NF2025";
-
-        # Used for configuring Pipewire.
-        security.rtkit.enable = true;
 
         # Load NVIDIA driver.
         services.xserver.videoDrivers = [ "nvidia" ];

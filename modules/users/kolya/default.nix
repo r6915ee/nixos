@@ -8,7 +8,8 @@
     includes = [
       den.provides.define-user
       den.provides.primary-user
-      den.aspects.custom.zeditor
+      den.aspects.programs.zeditor
+      den.aspects.cursor
       (den.provides.user-shell "fish")
     ];
     user = {
@@ -226,10 +227,6 @@
               {
                 name = "flathub";
                 location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-              }
-              {
-                name = "cosmic";
-                location = "https://apt.pop-os.org/cosmic/cosmic.flatpakrepo";
               }
               {
                 name = "flathub-beta";

@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, lib, ... }:
 {
   den.hosts.x86_64-linux.steamdeck = {
     hostName = "steamdeck";
@@ -12,15 +12,16 @@
     includes = [
       den.batteries.hostname
 
-      den.aspects.custom.hardware
-      den.aspects.custom.network
-      den.aspects.custom.fonts
-      den.aspects.custom.xdg
+      den.aspects.hardware
+      den.aspects.network
+      den.aspects.fonts
+      den.aspects.xdg
 
-      den.aspects.custom.boot
+      den.aspects.boot
 
-      den.aspects.custom.desktop
-    ];
+      den.aspects.desktop
+    ]
+    ++ lib.attrValues den.aspects.desktop.provides;
 
     nixos = { };
   };

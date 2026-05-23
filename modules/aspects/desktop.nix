@@ -1,77 +1,112 @@
 { inputs, ... }:
 {
-  den.aspects.custom.desktop = {
-    provides.niri.nixos =
-      { pkgs, ... }:
-      {
-        imports = [
-          inputs.dms.nixosModules.greeter
-          inputs.niri.nixosModules.niri
-        ];
-        nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  den.aspects.desktop = {
+    provides = {
+      niri.nixos =
+        { pkgs, ... }:
+        {
+          imports = [
+            inputs.dms.nixosModules.greeter
+            inputs.niri.nixosModules.niri
+          ];
+          nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
-        programs = {
-          # Enable Niri.
-          niri = {
-            enable = true;
-            package = pkgs.niri-unstable;
-          };
+          programs = {
+            # Enable Niri.
+            niri = {
+              enable = true;
+              package = pkgs.niri-unstable;
+            };
 
-          # Enable DankGreeter.
-          dank-material-shell.greeter = {
-            enable = true;
-            compositor.name = "niri";
-          };
-        };
-      };
-
-    nixos = {
-      programs = {
-        # Install Steam.
-        steam = {
-          enable = true;
-          remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-          dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-          localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-        };
-
-        # Enable nix-ld.
-        nix-ld.enable = true;
-
-        # Enable AppImages.
-        appimage = {
-          enable = true;
-          binfmt = true;
-        };
-
-        # Enable nh.
-        nh = {
-          enable = true;
-          clean.enable = true;
-        };
-
-        # Enable ydotool.
-        ydotool = {
-          enable = true;
-          group = "input";
-        };
-
-        # Configure Git at the system level.
-        git = {
-          enable = true;
-          config = {
-            safe.directory = "*";
+            # Enable DankGreeter.
+            dank-material-shell.greeter = {
+              enable = true;
+              compositor.name = "niri";
+            };
           };
         };
 
-        # Some programs need SUID wrappers, can be configured further or are
-        # started in user sessions.
-        # mtr.enable = true;
-        # gnupg.agent = {
-        #   enable = true;
-        #   enableSSHSupport = true;
-        # };
+      ydotool.nixos.programs.ydotool = {
+        enable = true;
+        group = "input";
       };
     };
+
+    nixos =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = with pkgs; [
+          vulkan-loader
+          vulkan-validation-layers
+          vulkan-tools
+
+          xwayland-satellite
+        ];
+
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+        };
+
+        programs = {
+          # Enable nix-ld.
+          nix-ld.enable = true;
+
+          # Enable AppImages.
+          appimage = {
+            enable = true;
+            binfmt = true;
+          };
+
+          # Enable nh.
+          nh = {
+            enable = true;
+            clean.enable = true;
+          };
+
+          # Configure Git at the system level.
+          git = {
+            enable = true;
+            config = {
+              safe.directory = "*";
+            };
+          };
+
+          # Some programs need SUID wrappers, can be configured further or are
+          # started in user sessions.
+          # mtr.enable = true;
+          # gnupg.agent = {
+          #   enable = true;
+          #   enableSSHSupport = true;
+          # };
+        };
+        services = {
+          system76-scheduler.enable = true;
+          blueman.enable = true;
+          xserver.enable = false;
+          flatpak.enable = true;
+
+          xserver.xkb = {
+            layout = "us";
+            variant = "";
+          };
+
+          # Enable sound with pipewire.
+          pulseaudio.enable = false;
+          pipewire = {
+            enable = true;
+            alsa.enable = true;
+            alsa.support32Bit = true;
+            pulse.enable = true;
+            # If you want to use JACK applications, uncomment this
+            #jack.enable = true;
+
+            # use the example session manager (no others are packaged yet so this is enabled by default,
+            # no need to redefine it in your config for now)
+            #media-session.enable = true;
+          };
+        };
+        security.rtkit.enable = true;
+      };
   };
 }

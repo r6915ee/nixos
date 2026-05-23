@@ -1,7 +1,10 @@
 {
-  den.aspects.custom.network.nixos.networking = {
+  den.aspects.network.nixos.networking = {
     firewall = rec {
-      allowedTCPPorts = [ 22 ];
+      allowedTCPPorts = [
+        22
+        5432
+      ];
       # allowedUDPPorts = [...];
       allowedTCPPortRanges = [
         {

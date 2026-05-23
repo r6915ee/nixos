@@ -17,66 +17,38 @@
         (inputs.templato.packages.x86_64-linux.default)
         zip
         unzip
-        cachix
-        kdePackages.qtmultimedia
-        brightnessctl
-        ddcutil
-        cliphist
         fragments
-        cabextract
         matugen
         nautilus
         wget
         cava
         rnote
-        wlsunset
-        xdg-desktop-portal
         imagemagick
-        tinty
         icu
         file
         virtualgl
         hunspell
         hunspellDicts.en_US
-        plasma-panel-colorizer
-        rustlings
         http-server
         polkit
-        soteria
         psmisc
         nixfmt
         wl-clipboard-rs
-        openssl
-        rar
-        speechd
-        qt6Packages.qtstyleplugin-kvantum
         btop
         alejandra
         zenity
         efibootmgr
-        OVMF
-        qemu
-        quickemu
         pciutils
         papirus-icon-theme
-        inxi
-        xwayland-satellite
-        vulkan-loader
-        vulkan-validation-layers
         package-version-server
-        vulkan-tools
         vlc
         nss
         ffmpeg
-        lldb
         nil
         nixd
         marksman
         gparted
-        libsForQt5.qoauth
-        libsForQt5.signond
         liboauth
-        umu-launcher
 
         # Configure QEMU
         (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''

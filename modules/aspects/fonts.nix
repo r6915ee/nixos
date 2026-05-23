@@ -1,5 +1,5 @@
 {
-  den.aspects.custom.fonts.nixos =
+  den.aspects.fonts.nixos =
     { pkgs, ... }:
     {
       fonts = {
