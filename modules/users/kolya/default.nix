@@ -11,6 +11,8 @@
       den.aspects.programs.zeditor
       den.aspects.cursor
       (den.provides.user-shell "fish")
+      den.aspects.systematic
+
       (den.aspects.flatpak [
         "org.srb2.SRB2"
         "org.vinegarhq.Sober"
@@ -32,61 +34,21 @@
     homeManager =
       {
         pkgs,
-        config,
-        lib,
         ...
       }:
       let
-        appman = pkgs.callPackage ./custom/appman.nix { inherit pkgs; };
-
-        inherit (config.lib.file) mkOutOfStoreSymlink;
-        inherit (lib) mergeAttrsList;
-
-        root = "/etc/nixos/modules/users/kolya";
-        toSrcFile = name: "${root}/dotfiles/${name}";
-
-        link = name: mkOutOfStoreSymlink (toSrcFile name);
-
-        linkFile = name: {
-          ${name}.source = link name;
-        };
-
-        linkDir = name: {
-          ${name} = {
-            source = link name;
-            recursive = true;
-          };
-        };
-
-        confFiles = map linkFile [
-          "niri/config.kdl"
-          "appman/appman-config"
-          "nixpkgs/config.nix"
-        ];
-
-        confDirs = map linkDir [ "flow" ];
-
-        links = mergeAttrsList (confFiles ++ confDirs);
-
         homeDir = "/home/kolya";
       in
       {
-        imports = [
-          inputs.nix-flatpak.homeManagerModules.nix-flatpak
-        ];
         nixpkgs.config.allowUnfree = true;
         home = {
           username = "kolya";
           homeDirectory = homeDir;
           stateVersion = "25.05";
           sessionVariables = {
-            FLOW_CONFIG_DIR = toSrcFile "flow";
             SOBER_USE_NEW_TEXT_RENDERER = "1";
           };
           packages = with pkgs; [
-            # Custom packages
-            appman
-
             # Nixpkgs
             sgdboop
             nemo
@@ -104,7 +66,6 @@
             inputs.devenv.packages.${system}.devenv
             inkscape-with-extensions
             gimp-with-plugins
-            flow-control
             kdePackages.kclock
           ];
         };
@@ -116,15 +77,9 @@
           };
           fish = {
             shellAliases = {
-              "ls" = "eza";
-              "cls" = "clear";
               "cne" = "lutris lutris:rungame/codename-engine";
               "fnf" = "lutris lutris:rungame/friday-night-funkin";
               "am" = "appman";
-            };
-            shellAbbrs = {
-              "nix-shell" = "nix-shell --run fish";
-              "zed" = "zeditor";
             };
             shellInit = ''
               starship init fish | source
@@ -212,16 +167,10 @@
               };
             };
           };
-          btop.enable = true;
           gh.enable = true;
           obsidian.enable = true;
           gh-dash.enable = true;
           gitui.enable = true;
-          eza.enable = true;
-          ripgrep.enable = true;
-          bat.enable = true;
-          fastfetch.enable = true;
-          zoxide.enable = true;
         };
         services = {
           ssh-agent = {
@@ -230,10 +179,9 @@
           kdeconnect.enable = true;
         };
         xdg = {
-          configFile = {
-            "ghostty/config".force = true;
-          }
-          // links;
+          # configFile = {
+          # "ghostty/config".force = true;
+          # };
           autostart.enable = true;
         };
       };

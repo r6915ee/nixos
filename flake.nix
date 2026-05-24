@@ -35,8 +35,7 @@
         (inputs.nixpkgs.lib.evalModules {
           modules = [
             (lib.pipe inputs.import-tree [
-              (i: i.filterNot (lib.hasInfix "custom"))
-              (i: i.filterNot (lib.hasInfix "dotfiles"))
+              (i: i.filterNot (lib.hasInfix "shared"))
               (i: i ./modules)
             ])
           ];

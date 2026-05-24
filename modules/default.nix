@@ -5,10 +5,11 @@
       {
         nixpkgs.config.allowUnfree = true;
         environment.localBinInPath = true;
-        environment.sessionVariables = {
+        environment.sessionVariables = rec {
           COSMIC_DATA_CONTROL_ENABLED = 1;
           QS_ICON_THEME = "Papirus-Dark";
           FLAKE = "/etc/nixos";
+          NH_FLAKE = FLAKE;
         };
         environment.systemPackages = with pkgs; [
           nixos-facter
