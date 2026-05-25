@@ -13,7 +13,7 @@
       (den.provides.user-shell "fish")
       den.aspects.systematic
 
-      (den.aspects.dots [ "s:niri/config.kdl" ] [ ])
+      (den.aspects.dots [ "niri/config.kdl" ] [ ])
 
       (den.aspects.flatpak [
         "org.srb2.SRB2"

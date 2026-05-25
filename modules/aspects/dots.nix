@@ -11,7 +11,7 @@ let
         name:
         let
           base = builtins.substring 0 2 name;
-          core = if base == "s:" then "shared" else "${user}/dotfiles";
+          core = if base == "s:" then "shared" else "${user.name}/dotfiles";
           suffix =
             if base == "s:" then builtins.substring 2 ((builtins.stringLength name) - 2) name else name;
         in
