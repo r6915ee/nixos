@@ -24,6 +24,7 @@
 
       den.aspects.git
       (den.aspects.tpm false)
+      (den.aspects.openssh true)
     ]
     ++ lib.attrValues den.aspects.desktop.provides;
 

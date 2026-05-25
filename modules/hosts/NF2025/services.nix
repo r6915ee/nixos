@@ -3,20 +3,6 @@
     { pkgs, ... }:
     {
       services = {
-        # Enable the OpenSSH daemon.
-        openssh = {
-          enable = true;
-          ports = [
-            22
-            5432
-          ];
-          settings = {
-            PasswordAuthentication = true;
-            AllowUsers = null;
-            PermitRootLogin = "no";
-          };
-        };
-
         # Enable CUPS to print documents.
         printing = {
           enable = true;
