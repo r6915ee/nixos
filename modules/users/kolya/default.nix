@@ -13,7 +13,7 @@
       (den.provides.user-shell "fish")
       den.aspects.systematic
 
-      (den.aspects.dots [ "s:niri/config.kdl" ] [])
+      (den.aspects.dots [ "s:niri/config.kdl" ] [ ])
 
       (den.aspects.flatpak [
         "org.srb2.SRB2"
@@ -87,28 +87,6 @@
               starship init fish | source
             '';
           };
-          git = {
-            enable = true;
-            package = pkgs.gitFull;
-            settings = {
-              user = {
-                name = "r6915ee";
-                email = "astergthefourth@gmail.com";
-              };
-              credential = {
-                helper = "libsecret";
-              };
-            };
-          };
-          jujutsu = {
-            enable = true;
-            settings = {
-              user = {
-                name = "r6915ee";
-                email = "astergthefourth@gmail.com";
-              };
-            };
-          };
           helix = {
             enable = true;
             defaultEditor = true;
@@ -175,9 +153,7 @@
           gitui.enable = true;
         };
         services = {
-          ssh-agent = {
-            enable = true;
-          };
+          ssh-agent.enable = true;
           kdeconnect.enable = true;
         };
         xdg = {
