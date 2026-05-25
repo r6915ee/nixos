@@ -9,7 +9,16 @@ consistency between machines.
 
 The flake is based on the `nixos-unstable` branch of Nixpkgs.
 
-### Programs
+## Machines
+
+The configuration works under two separate machines at the moment:
+
+- **NF2025**: A desktop PC designed for gaming, virtualisation, and just high
+  performance in general. Most changes are done from this machine.
+- **steamdeck**: A Steam Deck LCD model modded to replace the SSD with a larger
+  one, configured from the ground up.
+
+## Programs
 
 Some notable programs include:
 
