@@ -19,10 +19,17 @@
 
       den.aspects.boot
 
+      den.aspects.gaming
       den.aspects.desktop
     ]
     ++ lib.attrValues den.aspects.desktop.provides;
 
-    nixos = { };
+    nixos = {
+      imports = [
+        ../../../cachix.nix
+      ];
+
+      system.stateVersion = "25.11";
+    };
   };
 }
