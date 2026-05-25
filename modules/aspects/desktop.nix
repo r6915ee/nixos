@@ -32,19 +32,12 @@
               };
             };
           };
-        homeManager = {
+        provides.to-users.homeManager = {
           imports = [
             inputs.dms.homeModules.dank-material-shell
-            inputs.niri.homeModules.config
           ];
 
-          programs = {
-            dank-material-shell.enable = true;
-            niri = {
-              enable = true;
-              config = builtins.readFile ../users/shared/niri/config.kdl;
-            };
-          };
+          programs.dank-material-shell.enable = true;
         };
       };
 

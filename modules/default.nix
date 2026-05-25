@@ -3,6 +3,8 @@
     provides.to-hosts.nixos =
       { pkgs, ... }:
       {
+        home-manager.backupFileExtension = "bkp";
+
         nixpkgs.config.allowUnfree = true;
         environment.localBinInPath = true;
         environment.sessionVariables = rec {

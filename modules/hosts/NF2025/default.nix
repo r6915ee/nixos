@@ -22,8 +22,6 @@
 
       den.aspects.gaming
       den.aspects.desktop
-      den.aspects.desktop.niri
-      den.aspects.desktop.ydotool
     ]
     ++ lib.attrValues den.aspects.desktop.provides;
 
