@@ -22,6 +22,8 @@
 
       den.aspects.gaming
       den.aspects.desktop
+
+      (den.aspects.tpm false)
     ]
     ++ lib.attrValues den.aspects.desktop.provides;
 
