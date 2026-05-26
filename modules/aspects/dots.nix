@@ -6,26 +6,33 @@ let
       inherit (config.lib.file) mkOutOfStoreSymlink;
       inherit (lib) mergeAttrsList;
 
-      root = "/etc/nixos/modules/users";
-      toSrcFile =
-        name:
+      toSrcFileRelative =
+        name: shared:
         let
-          base = builtins.substring 0 2 name;
-          core = if base == "s:" then "shared" else "${user.name}/dotfiles";
-          suffix =
-            if base == "s:" then builtins.substring 2 ((builtins.stringLength name) - 2) name else name;
+          core = if shared == true then "shared" else "${user.name}/dotfiles";
         in
-        "${root}/${core}/${suffix}";
+        "${core}/${name}";
 
-      link = name: mkOutOfStoreSymlink (toSrcFile name);
+      root = "/etc/nixos/modules/users";
+      toSrcFileRooted = name: shared: "${root}/${toSrcFileRelative name shared}";
 
-      linkFile = name: {
-        ${name}.source = link name;
+      link = name: shared: mkOutOfStoreSymlink (toSrcFileRooted name shared);
+
+      resolve = file: rec {
+        filepath = if file ? "path" then file.path else file;
+        is-shared = if file ? "shared" then file.shared else false;
+        is-symlinked = if file ? "symlinked" then file.symlinked else false;
+        source =
+          if is-symlinked then link filepath is-shared else ../users/${toSrcFileRelative filepath is-shared};
       };
 
-      linkDir = name: {
-        ${name} = {
-          source = link name;
+      linkFile = file: {
+        ${if file ? "path" then file.path else file}.source = (resolve file).source;
+      };
+
+      linkDir = file: {
+        ${if file ? "path" then file.path else file} = {
+          source = (resolve file).source;
           recursive = true;
         };
       };
@@ -36,6 +43,8 @@ let
     mergeAttrsList (confFiles ++ confDirs);
 in
 {
+  # Compilation performance is not a concern here, so this aspect uses the
+  # array of structures formula.
   den.aspects.dots =
     files: dirs:
     { user }:

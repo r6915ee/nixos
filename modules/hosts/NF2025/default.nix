@@ -13,7 +13,7 @@
       den.provides.hostname
 
       den.aspects.hardware
-      den.aspects.network
+      (den.aspects.network false)
       den.aspects.fonts
       den.aspects.xdg
       den.aspects.virt

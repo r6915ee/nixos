@@ -14,15 +14,20 @@
           NH_FLAKE = FLAKE;
         };
         environment.systemPackages = with pkgs; [
+          doas-sudo-shim
+
           nixos-facter
           inxi
           cachix
         ];
         boot.loader.efi.canTouchEfiVariables = true;
-        nix.settings.experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
+        nix.settings = {
+          trusted-users = [ "decky" ];
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+        };
         boot.kernelPackages = pkgs.linuxPackages_zen;
         security.sudo.enable = false;
         security.doas = {
@@ -53,5 +58,6 @@
           LC_TIME = "en_US.UTF-8";
         };
       };
+    provides.to-users.homeManager.nixpkgs.config.allowUnfree = true;
   };
 }

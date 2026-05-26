@@ -13,7 +13,7 @@
       den.batteries.hostname
 
       den.aspects.hardware
-      den.aspects.network
+      (den.aspects.network true)
       den.aspects.fonts
       den.aspects.xdg
 
@@ -28,12 +28,26 @@
     ]
     ++ lib.attrValues den.aspects.desktop.provides;
 
-    nixos = {
-      imports = [
-        ../../../cachix.nix
-      ];
+    nixos =
+      { pkgs, ... }:
+      {
+        imports = [
+          ../../../cachix.nix
+        ];
 
-      system.stateVersion = "25.11";
-    };
+        system.stateVersion = "25.11";
+
+        services.greetd.settings.initial_session = {
+          command = "niri";
+          user = "decky";
+        };
+
+        environment.systemPackages = with pkgs; [
+          wvkbd
+          brightnessctl
+        ];
+
+        hardware.facter.reportPath = ./_facter.json;
+      };
   };
 }

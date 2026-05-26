@@ -8,12 +8,23 @@
     includes = [
       den.provides.define-user
       den.provides.primary-user
-      den.aspects.programs.zeditor
       den.aspects.cursor
       (den.provides.user-shell "fish")
       den.aspects.systematic
 
-      (den.aspects.dots [ "niri/config.kdl" ] [ ])
+      den.aspects.programs.zeditor
+      den.aspects.programs.fish
+      den.aspects.programs.ghostty
+
+      (den.aspects.dots
+        [
+          {
+            path = "niri/config.kdl";
+            symlinked = true;
+          }
+        ]
+        [ ]
+      )
 
       (den.aspects.flatpak [
         "org.srb2.SRB2"
@@ -81,7 +92,6 @@
             shellAliases = {
               "cne" = "lutris lutris:rungame/codename-engine";
               "fnf" = "lutris lutris:rungame/friday-night-funkin";
-              "am" = "appman";
             };
             shellInit = ''
               starship init fish | source
@@ -92,19 +102,6 @@
             defaultEditor = true;
             settings = {
               theme = "ayu_dark";
-            };
-          };
-          starship = {
-            enable = true;
-            enableFishIntegration = true;
-          };
-          ghostty = {
-            enable = true;
-            enableFishIntegration = true;
-            settings = {
-              command = "fish";
-              theme = "Ayu";
-              font-family = "0xProto Nerd Font";
             };
           };
           keepassxc = {
@@ -156,12 +153,7 @@
           ssh-agent.enable = true;
           kdeconnect.enable = true;
         };
-        xdg = {
-          # configFile = {
-          # "ghostty/config".force = true;
-          # };
-          autostart.enable = true;
-        };
+        xdg.autostart.enable = true;
       };
   };
 }

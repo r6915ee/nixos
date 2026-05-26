@@ -1,4 +1,4 @@
-{ den, inputs, ... }:
+{ den, ... }:
 {
   den.aspects.decky = {
     includes = [
@@ -7,6 +7,11 @@
       den.aspects.cursor
       (den.provides.user-shell "fish")
       den.aspects.systematic
+
+      den.aspects.programs.fish
+      den.aspects.programs.ghostty
+
+      (den.aspects.dots [ "niri/config.kdl" ] [ ])
 
       (den.aspects.flatpak [
         "org.srb2.SRB2"
@@ -21,11 +26,6 @@
     homeManager =
       { pkgs, ... }:
       {
-        imports = [
-          inputs.dms.homeModules.dank-material-shell
-          inputs.nix-flatpak.homeManagerModules.nix-flatpak
-        ];
-
         home = {
           username = "decky";
           homeDirectory = "/home/decky";
