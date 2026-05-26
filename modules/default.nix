@@ -14,8 +14,6 @@
           NH_FLAKE = FLAKE;
         };
         environment.systemPackages = with pkgs; [
-          doas-sudo-shim
-
           nixos-facter
           inxi
           cachix
@@ -29,7 +27,7 @@
           ];
         };
         boot.kernelPackages = pkgs.linuxPackages_zen;
-        security.sudo.enable = false;
+        # security.sudo.enable = false;
         security.doas = {
           enable = true;
           extraRules = [

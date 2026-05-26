@@ -41,6 +41,8 @@
         # Load NVIDIA driver.
         services.xserver.videoDrivers = [ "nvidia" ];
 
+        security.sudo.enable = false;
+
         # Hardware configuration
         hardware = {
           facter.reportPath = ./_facter.json;

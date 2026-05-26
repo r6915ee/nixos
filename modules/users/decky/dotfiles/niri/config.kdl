@@ -627,10 +627,11 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+X { spawn "wvkbd-mobintl"; }
+    Mod+X { spawn-sh "if pgrep wvkbd-mobintl; then pkill wvkbd-mobintl; else wvkbd-mobintl; fi"; }
 }
 
 include optional=true "dms/colors.kdl"
 include optional=true "dms/layout.kdl"
 include optional=true "dms/alttab.kdl"
 include optional=true "dms/binds.kdl"
+include optional=true "dms/outputs.kdl"

@@ -38,7 +38,7 @@
         system.stateVersion = "25.11";
 
         services.greetd.settings.initial_session = {
-          command = "niri";
+          command = "steam-gamescope";
           user = "decky";
         };
 
@@ -46,6 +46,13 @@
           wvkbd
           brightnessctl
         ];
+
+        programs.steam = {
+          extest.enable = true;
+          gamescopeSession = {
+            enable = true;
+          };
+        };
 
         hardware.facter.reportPath = ./_facter.json;
       };
