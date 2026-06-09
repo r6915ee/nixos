@@ -9,24 +9,28 @@
   # manually replaced with a larger, third-party one. Unlike other setups, this
   # configuration is rather manual in order to provide full control.
   den.aspects.steamdeck = {
-    includes = [
-      den.batteries.hostname
+    includes =
+      let
+        desktop = den.aspects.desktop false;
+      in
+      [
+        den.batteries.hostname
 
-      den.aspects.hardware
-      (den.aspects.network true)
-      den.aspects.fonts
-      den.aspects.xdg
+        den.aspects.hardware
+        (den.aspects.network true)
+        den.aspects.fonts
+        den.aspects.xdg
 
-      den.aspects.boot
+        den.aspects.boot
 
-      den.aspects.gaming
-      den.aspects.desktop
+        den.aspects.gaming
+        desktop
 
-      den.aspects.git
-      (den.aspects.tpm false)
-      (den.aspects.openssh true)
-    ]
-    ++ lib.attrValues den.aspects.desktop.provides;
+        den.aspects.git
+        (den.aspects.tpm false)
+        (den.aspects.openssh true)
+      ]
+      ++ lib.attrValues desktop.provides;
 
     nixos =
       { pkgs, ... }:

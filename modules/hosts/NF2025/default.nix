@@ -9,25 +9,29 @@
   # tools, gaming purposes, virtualisation, and more. The following code
   # contains mostly immutable code or code too short to allow delegating files.
   den.aspects.NF2025 = {
-    includes = [
-      den.provides.hostname
+    includes =
+      let
+        desktop = (den.aspects.desktop true);
+      in
+      [
+        den.provides.hostname
 
-      den.aspects.hardware
-      (den.aspects.network false)
-      den.aspects.fonts
-      den.aspects.xdg
-      den.aspects.virt
+        den.aspects.hardware
+        (den.aspects.network false)
+        den.aspects.fonts
+        den.aspects.xdg
+        den.aspects.virt
 
-      den.aspects.boot
+        den.aspects.boot
 
-      den.aspects.gaming
-      den.aspects.desktop
+        den.aspects.gaming
+        desktop
 
-      den.aspects.git
-      (den.aspects.tpm false)
-      (den.aspects.openssh true)
-    ]
-    ++ lib.attrValues den.aspects.desktop.provides;
+        den.aspects.git
+        (den.aspects.tpm false)
+        (den.aspects.openssh true)
+      ]
+      ++ lib.attrValues desktop.provides;
 
     nixos =
       { config, ... }:

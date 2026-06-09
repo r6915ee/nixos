@@ -3,6 +3,9 @@
 }:
 {
   den.aspects.programs = {
+    glance.homeManager.services.glance = {
+      enable = true;
+    };
     fish.homeManager.programs = {
       fish = {
         shellAliases = {

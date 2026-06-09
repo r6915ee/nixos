@@ -12,6 +12,7 @@
       (den.provides.user-shell "fish")
       den.aspects.systematic
 
+      den.aspects.programs.glance
       den.aspects.programs.zeditor
       den.aspects.programs.fish
       den.aspects.programs.ghostty

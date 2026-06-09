@@ -1,6 +1,6 @@
 { inputs, den, ... }:
 {
-  den.aspects.desktop = {
+  den.aspects.desktop = cosmic-greeter: {
     includes = [
       (den.aspects.flatpak [ ])
     ];
@@ -11,7 +11,6 @@
           { pkgs, ... }:
           {
             imports = [
-              inputs.dms.nixosModules.greeter
               inputs.niri.nixosModules.niri
             ];
             nixpkgs.overlays = [ inputs.niri.overlays.niri ];
@@ -24,13 +23,9 @@
                 enable = true;
                 package = pkgs.niri-unstable;
               };
-
-              # Enable DankGreeter.
-              dank-material-shell.greeter = {
-                enable = true;
-                compositor.name = "niri";
-              };
             };
+
+            services.displayManager.cosmic-greeter.enable = cosmic-greeter;
           };
         provides.to-users.homeManager = {
           imports = [
