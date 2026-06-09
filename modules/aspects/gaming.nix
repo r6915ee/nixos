@@ -43,6 +43,8 @@
                   libxdamage
                   libadwaita
                   gtk4
+                  libvlc
+                  libvlcpp
                 ];
               extraPkgs =
                 with pkgs;
