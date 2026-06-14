@@ -20,7 +20,7 @@
         (den.aspects.network false)
         den.aspects.fonts
         den.aspects.xdg
-        den.aspects.virt
+        (den.aspects.virt true)
 
         den.aspects.boot
 
