@@ -5,6 +5,32 @@
   den.aspects.programs = {
     glance.homeManager.services.glance = {
       enable = true;
+      settings = {
+        server.port = 5678;
+        pages = [
+          {
+            name = "Home";
+            columns = [
+              {
+                size = "full";
+                widgets = [
+                  {
+                    type = "rss";
+                    title = "Webcomics";
+                    style = "horizontal-cards";
+                    feeds = [
+                      {
+                        url = "https://politeandgood.com/comic/rss";
+                        name = "Broccoli Soup";
+                      }
+                    ];
+                  }
+                ];
+              }
+            ];
+          }
+        ];
+      };
     };
     fish.homeManager.programs = {
       fish = {

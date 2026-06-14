@@ -8,8 +8,11 @@
             allowedTCPPorts = [
               22
               5432
+              5678
             ];
-            # allowedUDPPorts = [...];
+            allowedUDPPorts = [
+              5678
+            ];
             allowedTCPPortRanges = [
               {
                 from = 1714;
