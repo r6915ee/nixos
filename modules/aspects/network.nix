@@ -4,6 +4,7 @@
       { lib, ... }:
       {
         networking = {
+          nftables.enable = true;
           firewall = rec {
             allowedTCPPorts = [
               22

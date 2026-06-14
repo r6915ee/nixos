@@ -13,6 +13,7 @@
       };
       shellAbbrs = {
         "cls" = "clear";
+        "cl" = "clear";
       };
     };
   };

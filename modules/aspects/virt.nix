@@ -1,24 +1,16 @@
 {
-  den.aspects.virt.nixos =
-    { pkgs, ... }:
-    {
+  den.aspects.virt = {
+    nixos = {
       virtualisation = {
         podman = {
           enable = true;
           dockerCompat = true;
         };
-        libvirtd.enable = true;
-        spiceUSBRedirection.enable = true;
+        lxc.enable = true;
+        incus.enable = true;
+        incus.ui.enable = true;
       };
-
-      environment.systemPackages = with pkgs; [
-        OVMF
-        qemu
-        quickemu
-      ];
-
-      programs.virt-manager.enable = true;
-
-      users.groups.libvirtd.members = [ "kolya" ];
     };
+    provides.to-users.user.extraGroups = [ "incus-admin" ];
+  };
 }

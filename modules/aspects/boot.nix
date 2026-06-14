@@ -12,7 +12,10 @@
         "splash"
         "rd.systemd.show_status=auto"
       ];
-      loader.limine.enable = true;
+      loader.limine = {
+        enable = true;
+        maxGenerations = 5;
+      };
     };
   };
 }

@@ -65,6 +65,7 @@
             vscodium-fhs
             nvtopPackages.nvidia
             yt-dlp
+            peazip
             inputs.devenv.packages.${system}.devenv
             inkscape-with-extensions
             gimp-with-plugins
