@@ -49,6 +49,7 @@
         marksman
         gparted
         liboauth
+        cosmic-edit
 
         # Configure QEMU
         (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
