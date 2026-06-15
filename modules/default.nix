@@ -5,6 +5,7 @@
       {
         home-manager.backupFileExtension = "bkp";
 
+        nix.package = pkgs.lixPackageSets.stable.lix;
         nixpkgs.config.allowUnfree = true;
         environment.localBinInPath = true;
         environment.sessionVariables = rec {
