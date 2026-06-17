@@ -47,6 +47,9 @@
 
         security.sudo.enable = false;
 
+        environment.etc."nvidia/nvidia-application-profiles-rc.d/niri.json".source =
+          ./dotfiles/nvidia/niri.json;
+
         # Hardware configuration
         hardware = {
           facter.reportPath = ./_facter.json;

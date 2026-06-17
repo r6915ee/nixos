@@ -15,7 +15,11 @@
             ];
             nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
-            environment.systemPackages = [ pkgs.xwayland-satellite ];
+            environment.systemPackages = with pkgs; [
+              xwayland-satellite
+              # Cage is installed, because xwayland-satellite appears to have VRAM issues on NVIDIA for some applications.
+              cage
+            ];
 
             programs = {
               # Enable Niri.
