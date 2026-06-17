@@ -92,6 +92,30 @@ window-rule {
 geometry-corner-radius 12
 clip-to-geometry true
 }
+workspace "browser" {}
+window-rule {
+    match app-id=r#"app\.zen_browser\.zen$"#
+    open-on-workspace "browser"
+}
+workspace "comms" {}
+window-rule {
+    match app-id="discord"
+    match app-id="Spotify"
+    open-on-workspace "comms"
+}
+workspace "prog" {}
+window-rule {
+    match app-id=r#"dev\.zed\.Zed$"#
+    match app-id=r#"com\.mitchellh\.ghostty$"#
+    open-on-workspace "prog"
+}
+workspace "gaming" {}
+window-rule {
+    match app-id="steam"
+    match app-id="itch"
+    match app-id=r#"net\.lutris\.Lutris$"#
+    open-on-workspace "gaming"
+}
 binds {
     Mod+Shift+Slash {
         show-hotkey-overlay
