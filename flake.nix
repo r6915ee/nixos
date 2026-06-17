@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     devenv.url = "github:cachix/devenv/main";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     import-tree.url = "github:vic/import-tree";

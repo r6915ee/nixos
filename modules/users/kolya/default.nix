@@ -16,6 +16,7 @@
       den.aspects.programs.zeditor
       den.aspects.programs.fish
       den.aspects.programs.ghostty
+      den.aspects.programs.spotify
 
       (den.aspects.dots
         [
@@ -60,7 +61,6 @@
             nemo
             libreoffice-qt-fresh
             tlrc
-            spotify
             codeberg-cli
             vscodium-fhs
             nvtopPackages.nvidia

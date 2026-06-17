@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ inputs, ... }:
 {
   den.aspects.programs = {
     glance.homeManager.services.glance = {
@@ -55,6 +53,32 @@
         theme = "Ayu";
         font-family = "0xProto Nerd Font";
       };
+    };
+    spotify.homeManager = { pkgs, ... }: {
+      imports = [
+        inputs.spicetify.homeManagerModules.spicetify
+      ];
+
+      programs.spicetify =
+        let
+          spicePkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.system};
+        in
+        {
+          enable = true;
+          enabledExtensions = with spicePkgs.extensions; [
+            adblockify
+            shuffle
+            powerBar
+            wikify
+            history
+            betterGenres
+            beautifulLyrics
+            spicyLyrics
+            aiBandBlocker
+            madeForYouShortcut
+          ];
+          theme = spicePkgs.themes.onepunch;
+        };
     };
     zeditor.homeManager.programs.zed-editor = {
       enable = true;
