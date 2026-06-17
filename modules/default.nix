@@ -17,6 +17,7 @@
           nixos-facter
           inxi
           cachix
+          kdlfmt
         ];
         boot.loader.efi.canTouchEfiVariables = true;
         nix.settings = {
