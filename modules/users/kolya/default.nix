@@ -13,9 +13,9 @@
       den.aspects.systematic
 
       den.aspects.programs.glance
-      den.aspects.programs.zeditor
+      den.aspects.programs.gram
       den.aspects.programs.fish
-      den.aspects.programs.ghostty
+      den.aspects.programs.rio
       den.aspects.programs.spotify
 
       (den.aspects.dots
@@ -24,6 +24,7 @@
             path = "niri/config.kdl";
             symlinked = true;
           }
+          "gram/settings.jsonc"
         ]
         [ ]
       )
@@ -77,6 +78,7 @@
           mangohud = {
             enable = true;
             enableSessionWide = true;
+            settingsPerApplication.rio.no_display = true;
           };
           fish = {
             shellAliases = {

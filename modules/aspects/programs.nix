@@ -45,13 +45,38 @@
         enableFishIntegration = true;
       };
     };
-    ghostty.homeManager.programs.ghostty = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        command = "fish";
-        theme = "Ayu";
-        font-family = "0xProto Nerd Font";
+    rio.homeManager = { pkgs, ... }: {
+      programs.rio = {
+        enable = true;
+        themes.ayu = (
+          fromTOML (
+            builtins.readFile "${
+              fetchTarball {
+                url = "https://github.com/mbadolato/iTerm2-Color-Schemes/archive/aa7e97b00fb8c8bea90763563f88d84bc5a8ae8e.tar.gz";
+                sha256 = "0qj8spa366rkcivkswfiphilbchjhm5zvhjv5019dkzs2r34q2la";
+              }
+            }/rio/Ayu.toml"
+          )
+        );
+        settings = {
+          theme = "ayu";
+          window = {
+            blur = true;
+            opacity = 0.5;
+            decorations = "Disabled";
+          };
+          confirm-before-quit = false;
+          cursor = {
+            shape = "beam";
+            blinking = true;
+          };
+          editor.program = "hx";
+          fonts = pkgs.lib.genAttrs [ "regular" "bold" "italic" "bold-italic" ] (name: {
+            family = "0xProto Nerd Font";
+            style = "default";
+          });
+          shell.program = "fish";
+        };
       };
     };
     spotify.homeManager = { pkgs, ... }: {
@@ -80,87 +105,10 @@
           theme = spicePkgs.themes.onepunch;
         };
     };
-    zeditor.homeManager.programs.zed-editor = {
-      enable = true;
-      extensions = [
-        "nix"
-        "toml"
-        "rust"
-        "lua"
-        "git-firefly"
-        "xml"
-        "ruby"
-        "ini"
-        "gdscript"
-        "just"
-        "base16"
-        "asciidoc"
-        "haxe"
-        "typst"
+    gram.homeManager = { pkgs, ... }: {
+      home.packages = [
+        pkgs.gram
       ];
-      userSettings = {
-        theme = {
-          mode = "system";
-          dark = "Ayu Dark";
-          light = "Ayu Light";
-        };
-        vim_mode = true;
-        minimap = {
-          show = "auto";
-          thumb = "hover";
-        };
-        buffer_font_family = "0xProto Nerd Font";
-        base_keymap = "JetBrains";
-        telemetry.metrics = false;
-        hard_tabs = false;
-        disable_ai = true;
-        terminal.shell.program = "fish";
-        lsp = {
-          tinymist = {
-            settings = {
-              formatterMode = "typstyle";
-              formatterPrintWidth = 80;
-            };
-          };
-          package-version-server = {
-            enable_lsp_tasks = false;
-          };
-          luau-lsp = {
-            settings = {
-              luau-lsp = {
-                plugin.enabled = true;
-                roblox.enabled = true;
-              };
-            };
-          };
-        };
-        languages = {
-          "Markdown".format_on_save = "on";
-          "Lua" = {
-            tab_size = 3;
-            format_on_save = "on";
-          };
-          "Luau" = {
-            tab_size = 3;
-            format_on_save = "on";
-          };
-          "Typst" = {
-            tab_size = 2;
-            format_on_save = "on";
-            formatter = {
-              external = {
-                command = "typstyle";
-                arguments = [
-                  "-l"
-                  "80"
-                  "-t"
-                  "2"
-                ];
-              };
-            };
-          };
-        };
-      };
     };
   };
 }

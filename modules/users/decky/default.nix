@@ -9,7 +9,7 @@
       den.aspects.systematic
 
       den.aspects.programs.fish
-      den.aspects.programs.ghostty
+      den.aspects.programs.rio
 
       (den.aspects.dots [ "niri/config.kdl" ] [ ])
 
