@@ -110,7 +110,21 @@
     };
     gram.homeManager = { pkgs, ... }: {
       home.packages = [
-        pkgs.gram
+        (pkgs.buildFHSEnv {
+          name = "gram";
+          targetPkgs =
+            pkgs: with pkgs; [
+              rustup
+              gram
+              clang
+            ];
+          shellHook = ''
+            export PATH="''${CARGO_HOME:-~/.cargo}/bin":"$PATH"
+            export PATH="''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-${pkgs.stdenv.hostPlatform.rust.rustcTarget}/bin":"$PATH"
+          '';
+          RUSTC_VERSION = "stable";
+          runScript = "gram";
+        })
       ];
     };
   };
