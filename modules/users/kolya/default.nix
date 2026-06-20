@@ -31,7 +31,7 @@
       (den.aspects.flatpak [
         "io.github.dvlv.boxbuddyrs"
         "com.core447.StreamController"
-        "app.zen_browser.zen"
+        "net.waterfox.waterfox"
         "com.github.tchx84.Flatseal"
         "com.discordapp.Discord"
       ])

@@ -84,7 +84,7 @@ clip-to-geometry true
 }
 workspace "browser" {}
 window-rule {
-    match app-id=r#"app\.zen_browser\.zen$"#
+    match app-id=r#"net\.waterfox\.waterfox$"#
     open-on-workspace "browser"
 }
 workspace "comms" {}
