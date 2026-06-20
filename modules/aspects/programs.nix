@@ -71,7 +71,10 @@
             blinking = true;
           };
           editor.program = "hx";
-          fonts = pkgs.lib.genAttrs [ "regular" "bold" "italic" "bold-italic" ] (name: {
+          fonts = {
+            size = 16;
+          }
+          // pkgs.lib.genAttrs [ "regular" "bold" "italic" "bold-italic" ] (name: {
             family = "0xProto Nerd Font";
             style = "default";
           });
