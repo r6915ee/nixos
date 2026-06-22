@@ -78,7 +78,9 @@
           mangohud = {
             enable = true;
             enableSessionWide = true;
-            settingsPerApplication.rio.no_display = true;
+            settingsPerApplication = pkgs.lib.genAttrs [ "rio" "gram-editor" ] (name: {
+              no_display = true;
+            });
           };
           fish = {
             shellAliases = {
