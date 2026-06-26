@@ -21,6 +21,9 @@
               }
             ];
             allowedUDPPortRanges = allowedTCPPortRanges;
+            trustedInterfaces = [
+              "incusbr0"
+            ];
           };
           networkmanager.enable = true;
           wireless.enable = lib.mkDefault support-wireless;
